@@ -1,0 +1,77 @@
+.sub-menu {
+    --gap: 0;
+    min-width: 15rem;
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: calc(100% + 0.5rem);
+    background: hsl(var(--neutral));
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all .3s ease;
+
+    li {
+        position: relative;
+
+        &:last-child {
+            border-bottom: 0.25rem solid hsl(var(--accent));
+
+            &:hover {
+                border-color: hsl(var(--base-700));
+            }
+
+            .sub-menu__link {
+                border-block-end: none;
+            }
+        }
+
+        &:hover {
+            .sub-menu__link {
+                color: hsl(var(--neutral));
+                background: hsl(var(--base-600));
+
+                &.has-sub {
+                    &::after {
+                        content: "\e5cc";
+                    }
+                }
+            }
+
+            .inner-sub {
+                inset-inline-start: 100%;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: unset;
+            }
+        }
+    }
+
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem 1.5rem;
+        border-block-end: 1px solid hsl(var(--border)/.5);
+        font-size: 1rem;
+        color: hsl(var(--text));
+        text-decoration: none;
+        transition: all .3s ease;
+
+        &:hover {
+            color: hsl(var(--neutral));
+        }
+
+        &.has-sub {
+            position: relative;
+            isolation: isolate;
+
+            &::after {
+                content: "\e5cf";
+                font-family: 'Material Symbols Rounded';
+                font-weight: 300;
+                display: grid;
+                place-content: center;
+                pointer-events: none;
+            }
+        }
+    }
+}

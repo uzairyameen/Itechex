@@ -1,0 +1,78 @@
+.leadership-card {
+    padding: 2rem;
+    position: relative;
+    isolation: isolate;
+    background-color: hsl(var(--white));
+    border-radius: 2rem;
+    box-shadow: 0 rem(10) rem(40) hsl(var(--shadow)/.05);
+    overflow: hidden;
+
+    &__img {
+        width: rem(180);
+        height: rem(180);
+        border-radius: 50%;
+        overflow: hidden;
+
+        &-is {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__open-btn {
+        width: rem(60);
+        height: rem(60);
+        display: grid;
+        place-content: center;
+        position: absolute;
+        inset-inline-end: 0;
+        inset-block-end: 0;
+        border: none;
+        background-color: hsl(var(--accent-dark));
+        color: hsl(var(--light));
+        transition: all .3s ease;
+
+        &:hover {
+            color: hsl(var(--dark));
+            background-color: hsl(var(--accent));
+        }
+    }
+
+    &__overlay {
+        padding: rem(32);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        inset-inline: 0;
+        inset-block: 0;
+        background-color: hsl(var(--accent-dark));
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: -1;
+        transition: all .3s ease;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            z-index: 1;
+        }
+    }
+
+    &__close-btn {
+        display: grid;
+        place-content: center;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        color: hsl(var(--light));
+        transition: all .3s ease;
+
+        &:hover {
+            color: hsl(var(--light));
+        }
+    }
+}

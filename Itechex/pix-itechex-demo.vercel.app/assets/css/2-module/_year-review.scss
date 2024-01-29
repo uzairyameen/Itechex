@@ -1,0 +1,126 @@
+.year-review {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    @include screen(md) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 1rem;
+        row-gap: 2.5rem;
+    }
+
+    @include screen(xl) {
+        gap: 0;
+        height: rem(650);
+        overflow: hidden;
+    }
+
+    &__head {
+        @include screen(xl) {
+            position: absolute;
+            top: rem(60);
+            width: 100%;
+            z-index: 9;
+            pointer-events: none;
+        }
+    }
+
+    &__column {
+        @include screen(md) {
+            width: calc(50% - .5rem);
+        }
+
+        @include screen(lg) {
+            width: calc(33.333% - .67rem);
+        }
+
+        @include screen(xl) {
+            width: auto;
+            max-height: 100%;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            position: relative;
+            isolation: isolate;
+            border-inline: 1px solid hsl(var(--stroke)/.15);
+            overflow: hidden;
+        }
+
+        &.active {
+            @include screen(xl) {
+                flex-basis: rem(350);
+
+                .year-review__year {
+                    display: none;
+                }
+
+                .year-review__content {
+                    width: 100%;
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: unset;
+                }
+
+                .year-review__content-body {
+                    height: auto;
+                }
+
+                .year-review__content-footer {
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    &__year {
+        display: none;
+
+        @include screen(xl) {
+            display: grid;
+            place-content: center;
+            position: absolute;
+            inset: 0;
+            text-align: center;
+            color: hsl(var(--light));
+        }
+    }
+
+    &__content {
+        padding-inline: 1rem;
+
+        @include screen(xs) {
+            padding-inline: 1.5rem;
+        }
+
+        @include screen(xl) {
+            padding: 1.5rem 2.5rem;
+            width: rem(350);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+            background: hsl(var(--base));
+            pointer-events: none;
+        }
+
+        &-body {
+            @include screen(xl) {
+                height: 0;
+                margin-top: auto;
+            }
+        }
+
+        &-footer {
+            @include screen(xl) {
+                height: 0;
+            }
+        }
+    }
+
+    &__seperator {
+        border-color: hsl(var(--light));
+    }
+}

@@ -1,0 +1,423 @@
+/*---------------------------------------
+
+    Theme Name: Itechex - IT Solution & Services HTML Template
+    Description: IT Solution & Services HTML Template
+    Author Name: Pixelaxis
+    Author URI:  https://themeforest.net/user/pixelaxis
+    Version: 1.0
+
+-----------------------------------------
+    Table of contents
+-----------------------------------------
+
+	0.1 Bootstrap
+	0.2 Base Style
+	0.3 Modules Style
+	0.4 Theme Style
+	0.5 Layouts Style
+
+-----------------------------------------*/
+
+/*---------------------------------------
+    0.1 Bootstrap
+-----------------------------------------*/
+//Functions
+@import "../../../node_modules/bootstrap/scss/functions";
+
+//Default variable overrides here (IF NEEDED)
+$border-radius: 0.25rem;
+$border-radius-sm: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+$border-radius-2xl: 1.25rem;
+$primary: #0d84d3;
+$secondary: #7c41fb;
+$success: #1ec892;
+$danger: #ff4268;
+$warning: #FFBB0B;
+$info: #189ab4;
+
+//Required parts
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/variables-dark";
+
+//Default map overrides here
+$spacer: 1rem;
+$spacers: (
+	0: 0,
+	1: $spacer * 0.25,
+	2: $spacer * 0.5,
+	3: $spacer * 0.75,
+	4: $spacer,
+	5: $spacer * 1.25,
+	6: $spacer * 1.5,
+	7: $spacer * 1.75,
+	8: $spacer * 2,
+	9: $spacer * 2.25,
+	10: $spacer * 2.5,
+	11: $spacer * 2.75,
+	12: $spacer * 3,
+	13: $spacer * 3.25,
+	14: $spacer * 3.5,
+	15: $spacer * 3.75,
+	16: $spacer * 4,
+	17: $spacer * 4.25,
+	18: $spacer * 4.5,
+	19: $spacer * 4.75,
+	20: $spacer * 5,
+	21: $spacer * 5.25,
+	22: $spacer * 5.5,
+	23: $spacer * 5.75,
+	24: $spacer * 6,
+	25: $spacer * 6.25,
+	26: $spacer * 6.5,
+	27: $spacer * 6.75,
+	28: $spacer * 7,
+	29: $spacer * 7.25,
+	30: $spacer * 7.5,
+);
+
+//Remainder of required parts
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/root";
+
+//Optional Bootstrap components
+@import "../../../node_modules/bootstrap/scss/utilities";
+@import "../../../node_modules/bootstrap/scss/reboot";
+@import "../../../node_modules/bootstrap/scss/type";
+@import "../../../node_modules/bootstrap/scss/images";
+@import "../../../node_modules/bootstrap/scss/containers";
+@import "../../../node_modules/bootstrap/scss/grid";
+@import "../../../node_modules/bootstrap/scss/helpers";
+@import "../../../node_modules/bootstrap/scss/accordion";
+@import "../../../node_modules/bootstrap/scss/alert";
+@import "../../../node_modules/bootstrap/scss/badge";
+@import "../../../node_modules/bootstrap/scss/breadcrumb";
+@import "../../../node_modules/bootstrap/scss/button-group";
+@import "../../../node_modules/bootstrap/scss/buttons";
+@import "../../../node_modules/bootstrap/scss/card";
+@import "../../../node_modules/bootstrap/scss/carousel";
+@import "../../../node_modules/bootstrap/scss/close";
+@import "../../../node_modules/bootstrap/scss/dropdown";
+@import "../../../node_modules/bootstrap/scss/forms";
+@import "../../../node_modules/bootstrap/scss/list-group";
+@import "../../../node_modules/bootstrap/scss/modal";
+@import "../../../node_modules/bootstrap/scss/nav";
+@import "../../../node_modules/bootstrap/scss/navbar";
+@import "../../../node_modules/bootstrap/scss/offcanvas";
+@import "../../../node_modules/bootstrap/scss/pagination";
+@import "../../../node_modules/bootstrap/scss/placeholders";
+@import "../../../node_modules/bootstrap/scss/popover";
+@import "../../../node_modules/bootstrap/scss/progress";
+@import "../../../node_modules/bootstrap/scss/spinners";
+@import "../../../node_modules/bootstrap/scss/tables";
+@import "../../../node_modules/bootstrap/scss/toasts";
+@import "../../../node_modules/bootstrap/scss/tooltip";
+@import "../../../node_modules/bootstrap/scss/transitions";
+
+//Modify Utilities
+$utilities: map-merge(
+	$utilities,
+	(
+		"border-top":
+			map-merge(
+				map-get($utilities, "border-top"),
+				(
+					property: border-block-start,
+					class: border-top
+				)
+			),
+		"border-end":
+			map-merge(
+				map-get($utilities, "border-end"),
+				(
+					property: border-inline-end,
+					class: border-end
+				)
+			),
+		"border-bottom":
+			map-merge(
+				map-get($utilities, "border-bottom"),
+				(
+					property: border-block-end,
+					class: border-bottom
+				)
+			),
+		"border-start":
+			map-merge(
+				map-get($utilities, "border-start"),
+				(
+					property: border-inline-start,
+					class: border-start
+				)
+			),
+		"rounded-top":
+			map-merge(
+				map-get($utilities, "rounded-top"),
+				(
+					property: border-start-start-radius border-start-end-radius,
+					class: rounded-top
+				)
+			),
+		"rounded-end":
+			map-merge(
+				map-get($utilities, "rounded-end"),
+				(
+					property: border-start-end-radius border-end-end-radius,
+					class: rounded-end
+				)
+			),
+		"rounded-bottom":
+			map-merge(
+				map-get($utilities, "rounded-bottom"),
+				(
+					property: border-end-end-radius border-end-start-radius,
+					class: rounded-bottom
+				)
+			),
+		"rounded-start":
+			map-merge(
+				map-get($utilities, "rounded-start"),
+				(
+					property: border-end-start-radius border-start-start-radius,
+					class: rounded-start
+				)
+			),
+		"margin":
+			map-merge(
+				map-get($utilities, "margin"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+				)
+			),
+		"margin-x":
+			map-merge(
+				map-get($utilities, "margin-x"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: margin-inline,
+				)
+			),
+		"margin-y":
+			map-merge(
+				map-get($utilities, "margin-y"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: margin-block,
+				)
+			),
+		"margin-top":
+			map-merge(
+				map-get($utilities, "margin-top"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: margin-block-start,
+				)
+			),
+		"margin-end":
+			map-merge(
+				map-get($utilities, "margin-end"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: margin-inline-end,
+				)
+			),
+		"margin-bottom":
+			map-merge(
+				map-get($utilities, "margin-bottom"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: margin-block-end,
+				)
+			),
+		"margin-start":
+			map-merge(
+				map-get($utilities, "margin-start"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: margin-inline-start,
+				)
+			),
+		"padding":
+			map-merge(
+				map-get($utilities, "padding"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+				)
+			),
+		"padding-x":
+			map-merge(
+				map-get($utilities, "padding-x"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: padding-inline,
+				)
+			),
+		"padding-y":
+			map-merge(
+				map-get($utilities, "padding-y"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: padding-block,
+				)
+			),
+		"padding-top":
+			map-merge(
+				map-get($utilities, "padding-top"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: padding-block-start,
+				)
+			),
+		"padding-end":
+			map-merge(
+				map-get($utilities, "padding-end"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: padding-inline-end,
+				)
+			),
+		"padding-bottom":
+			map-merge(
+				map-get($utilities, "padding-bottom"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: padding-block-end,
+				)
+			),
+		"padding-start":
+			map-merge(
+				map-get($utilities, "padding-start"),
+				(
+					values:
+						map-merge(
+							$spacers,
+							(
+								auto: auto,
+							)
+						),
+					property: padding-inline-start,
+				)
+			),
+		"gap":
+			map-merge(
+				map-get($utilities, "gap"),
+				(
+					values: $spacers,
+				)
+			),
+		"text-align":
+			map-merge(
+				map-get($utilities, "text-align"),
+				(
+					values: (
+						start: start,
+						end: end,
+						center: center,
+					),
+				)
+			),
+	)
+);
+
+//Optional Utilities API
+@import "../../../node_modules/bootstrap/scss/utilities/api";
+
+/*---------------------------------------
+    0.2 Base Style
+-----------------------------------------*/
+@import "1-base/1-base";
+
+/*---------------------------------------
+    0.3 Modules Style
+-----------------------------------------*/
+@import "2-module/2-module";
+
+/*---------------------------------------
+    0.4 Theme Style
+-----------------------------------------*/
+@import "3-theme/3-theme";
+
+/*---------------------------------------
+    0.5 Layouts Style
+-----------------------------------------*/
+@import "4-layouts/4-layouts";

@@ -1,0 +1,64 @@
+.mat-icon {
+    --mat-size: #{rem(24)};
+    --mat-wght: 200;
+    --mat-fill: 0;
+    --mat-grad: 0;
+    font-size: var(--mat-size);
+    font-variation-settings: 'wght' var(--mat-wght), 'FILL' var(--mat-fill), 'GRAD' var(--mat-grad);
+
+    &.size-16 {
+        --mat-size: #{rem(16)};
+    }
+
+    &.size-20 {
+        --mat-size: #{rem(20)};
+    }
+
+    &.size-24 {
+        --mat-size: #{rem(24)};
+    }
+
+    &.size-32 {
+        --mat-size: #{rem(32)};
+    }
+
+    &.size-40 {
+        --mat-size: #{rem(40)};
+    }
+
+    &.size-48 {
+        --mat-size: #{rem(48)};
+    }
+
+    &.fw-100 {
+        --mat-wght: 100
+    }
+
+    &.fw-200 {
+        --mat-wght: 200
+    }
+
+    &.fw-300 {
+        --mat-wght: 300
+    }
+
+    &.fw-400 {
+        --mat-wght: 400
+    }
+
+    &.fw-500 {
+        --mat-wght: 500
+    }
+
+    &.fw-600 {
+        --mat-wght: 600
+    }
+
+    &.fw-700 {
+        --mat-wght: 700
+    }
+
+    &.solid {
+        --mat-fill: 1
+    }
+}

@@ -1,0 +1,24 @@
+.feedback-slider-2 {
+    --swiper-theme-color: hsl(var(--base));
+    --swiper-navigation-size: 32px;
+    position: relative;
+
+    &__is {
+        margin-block: -2rem;
+    }
+
+    .swiper-button-next {
+        @include screen(xxl) {
+            right: auto;
+            left: calc(100%);
+        }
+    }
+
+    .swiper-button-prev {
+        @include screen(xxl) {
+            left: auto;
+            right: calc(100%);
+        }
+    }
+
+}

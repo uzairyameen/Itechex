@@ -1,0 +1,14 @@
+.support-section-1 {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset-inline: 0;
+        inset-block-start: 20%;
+        inset-block-end: 0;
+        background-color: hsl(var(--base));
+        z-index: -1;
+    }
+}

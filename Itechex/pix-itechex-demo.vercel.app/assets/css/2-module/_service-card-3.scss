@@ -1,0 +1,51 @@
+.service-card-3 {
+    position: relative;
+    isolation: isolate;
+
+    &__content {
+        position: absolute;
+        inset-block-start: rem(32);
+        inset-inline: rem(32);
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        color: hsl(var(--dark));
+        text-decoration: none;
+        transition: all .3s ease;
+
+        &:hover {
+            color: hsl(var(--base));
+        }
+    }
+
+    &__img {
+        &-is {
+            width: 100%;
+            max-height: rem(400);
+            object-fit: cover;
+        }
+    }
+
+    &__subtitle {
+        display: block;
+        margin: 0;
+    }
+
+    &__title {
+        display: block;
+        margin: 0;
+    }
+
+    &__btn {
+        display: grid;
+        color: hsl(var(--base));
+        transition: all .3s ease;
+
+        &:hover {
+            color: hsl(var(--base-600));
+        }
+    }
+}

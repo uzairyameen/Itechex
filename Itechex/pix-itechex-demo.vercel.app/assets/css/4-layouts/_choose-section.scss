@@ -1,0 +1,19 @@
+.choose-section {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        @include screen(xl) {
+            content: '';
+            position: absolute;
+            inset-inline-start: 50%;
+            inset-inline-end: 0;
+            inset-block: #{rem(175)};
+            background-image: url(../images/choose-bg.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+    }
+}

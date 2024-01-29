@@ -1,0 +1,45 @@
+.cta-banner {
+    padding: 1.5rem .5rem;
+    position: relative;
+    isolation: isolate;
+
+    @include screen(xs) {
+        padding: 2rem 1.5rem;
+    }
+
+    @include screen(sm) {
+        padding: 2.5rem 2rem;
+    }
+
+    @include screen(md) {
+        padding: 2rem 1.5rem;
+    }
+
+    @include screen(lg) {
+        padding: 3rem;
+
+        &::before {
+            content: url(../images/cta-banner-element-1.png);
+            position: absolute;
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            z-index: -1;
+        }
+
+        &::after {
+            content: url(../images/cta-banner-element-2.png);
+            position: absolute;
+            inset-block-end: -#{rem(5)};
+            inset-inline-end: 0;
+            z-index: -1;
+        }
+    }
+
+    @include screen(xl) {
+        padding: 4rem;
+    }
+
+    @include screen(xxl) {
+        padding: 4.5rem;
+    }
+}

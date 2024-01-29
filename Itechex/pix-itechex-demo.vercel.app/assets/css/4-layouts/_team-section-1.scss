@@ -1,0 +1,15 @@
+.team-section-1 {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        content: '';
+        height: 50%;
+        position: absolute;
+        inset-inline-start: 0;
+        inset-inline-end: 0;
+        inset-block-end: 0;
+        background: hsl(var(--base));
+        z-index: -1;
+    }
+}

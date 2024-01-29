@@ -1,0 +1,31 @@
+.image-move {
+    &-start {
+        @include screen(xxl-xx) {
+            position: relative;
+            transform: translateX(-#{rem(80)});
+        }
+    }
+
+    &-end {
+        @include screen(xxl-xx) {
+            position: relative;
+            transform: translateX(#{rem(80)});
+        }
+    }
+}
+
+[dir="rtl"] {
+    .image-move {
+        &-start {
+            @include screen(xxl-xx) {
+                transform: translateX(#{rem(80)});
+            }
+        }
+
+        &-end {
+            @include screen(xxl-xx) {
+                transform: translateX(-#{rem(80)});
+            }
+        }
+    }
+}

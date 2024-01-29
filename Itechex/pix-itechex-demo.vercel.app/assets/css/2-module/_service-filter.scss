@@ -1,0 +1,26 @@
+.service-filter {
+    display: inline-block;
+    padding: .5rem;
+    border-radius: 5rem;
+    @include screen(xl) {
+        border: 1px solid hsl(var(--stroke));
+    }
+
+    &__btn {
+        padding: .75rem 2rem;
+        border: 1px solid hsl(var(--stroke)) !important;
+        font-weight: 500;
+        color: hsl(var(--base));
+        text-align: center;
+        transition: all .3s ease;
+
+        &:hover {
+            color: hsl(var(--light));
+            background: hsl(var(--base)) !important;
+        }
+
+        &.active {
+            background: hsl(var(--base)) !important;
+        }
+    }
+}

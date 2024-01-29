@@ -1,0 +1,71 @@
+.social-icon {
+    display: grid;
+    place-content: center;
+    position: relative;
+    isolation: isolate;
+    line-height: 1;
+
+    &--xs {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 1rem;
+        line-height: 1;
+    }
+
+    &--sm {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.25rem;
+        line-height: 1;
+    }
+
+    &--circle {
+        border-radius: 50%;
+    }
+
+    &--rounded {
+        border-radius: .25rem;
+    }
+
+    &--light {
+        background: hsl(var(--neutral));
+        color: hsl(var(--base));
+
+        &:hover {
+            background: hsl(var(--base));
+            color: hsl(var(--neutral));
+        }
+    }
+
+    &--light-outline {
+        background: transparent;
+        border: 1px solid hsl(var(--light)/.5);
+        color: hsl(var(--light));
+
+        &:hover {
+            background: hsl(var(--light));
+            color: hsl(var(--base));
+        }
+    }
+
+    &--base-outline {
+        background: transparent;
+        border: 1px solid hsl(var(--base)/.5);
+        color: hsl(var(--base));
+
+        &:hover {
+            background: hsl(var(--base));
+            color: hsl(var(--light));
+        }
+    }
+
+    &--neutral-200 {
+        background: hsl(var(--neutral-200));
+        color: hsl(var(--base));
+
+        &:hover {
+            background: hsl(var(--base));
+            color: hsl(var(--neutral));
+        }
+    }
+}

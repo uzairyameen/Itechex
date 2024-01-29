@@ -1,0 +1,36 @@
+.feature-card-1 {
+    padding: rem(40) rem(32);
+    position: relative;
+    isolation: isolate;
+    background-color: hsl(var(--white));
+    background-image: url(../images/feature-card-bg.png);
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+    border: 1px solid hsl(var(--divider)/.5);
+    border-radius: .75rem;
+    overflow: hidden;
+
+    @include screen(xl) {
+        background-size: cover;
+    }
+
+    @include screen(xxl) {
+        background-size: contain;
+    }
+
+    &:hover {
+        &::after {
+            opacity: 0;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: hsl(var(--neutral-100));
+        z-index: -1;
+        transition: all .3s ease;
+    }
+}

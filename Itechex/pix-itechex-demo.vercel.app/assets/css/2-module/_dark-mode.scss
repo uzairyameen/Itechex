@@ -1,0 +1,68 @@
+[data-bs-theme="dark"] {
+    .booking-form__input {
+        border: 1px solid hsl(var(--neutral)/.15);
+    }
+
+    .booking-form__select .form-select {
+        border: 1px solid hsl(var(--neutral)/.15);
+    }
+
+    .logo__dark {
+        display: none;
+    }
+
+    .logo__light {
+        display: block;
+    }
+
+    .booking-form {
+        box-shadow: 0 .5rem 2rem 0 hsl(var(--neutral-100)/.7);
+    }
+
+    .t-link--base {
+        &:hover {
+            color: hsl(var(--accent));
+        }
+    }
+
+    .service-card--1 {
+        --border-clr: hsl(var(--stroke)/.1);
+        --bg: hsl(var(--neutral-300));
+
+        &:hover {
+            --border-clr: hsl(var(--stroke)/.05);
+            box-shadow: 0 0.5rem 2rem 0 hsl(var(--shadow)/0.7);
+        }
+    }
+
+    .bttn--light-outline {
+        border: 1px solid hsl(var(--light)/.5);
+    }
+
+    .sub-menu {
+        background: hsl(var(--white));
+
+        &__link {
+            border-block-end: 1px solid hsl(var(--border)/.2);
+        }
+    }
+
+    .inner-sub {
+        background: hsl(var(--white));
+
+        &__link {
+            border-block-end: 1px solid hsl(var(--border)/.2);
+        }
+    }
+
+    .deep-sub {
+        &__link {
+            background: hsl(var(--white));
+            border-block-end: 1px solid hsl(var(--border)/.2);
+        }
+    }
+
+    .mega-menu {
+        background: hsl(var(--white));
+    }
+}

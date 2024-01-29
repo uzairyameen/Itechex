@@ -1,0 +1,123 @@
+.landing-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: clamp(3.75rem + 72px, 6.5vw + 72px, 7.5rem + 72px);
+    background-image: url(../images/landing-hero-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    isolation: isolate;
+
+    @include screen(xxl-x) {
+        overflow: hidden;
+    }
+
+    &__title {
+        font-size: clamp(2rem, 4vw + 1rem, 4.75rem);
+    }
+
+    &__img {
+        display: none;
+
+        @include screen(xxl-x) {
+            display: block;
+            position: absolute;
+            width: rem(500);
+            border-radius: .5rem;
+            overflow: hidden;
+            z-index: -1;
+
+            &-is {
+                width: 100%;
+                height: auto;
+            }
+
+            &--1 {
+                inset-block-start: rem(32);
+                inset-inline-start: 0;
+            }
+
+            &--2 {
+                inset-inline-start: 0;
+                transform: translateX(-50%);
+            }
+
+            &--3 {
+                inset-block-end: 0;
+                inset-inline-start: 35%;
+                transform: translate(-50%, 20%);
+            }
+
+            &--4 {
+                inset-block-start: rem(160);
+                inset-inline-end: 0;
+                transform: translateX(30%);
+            }
+
+            &--5 {
+                inset-block-end: rem(120);
+                inset-inline-end: 0;
+                transform: translateX(55%);
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: 2rem;
+        gap: .25rem;
+
+        @include screen(xxl-x) {
+            display: inline-grid;
+            place-content: center;
+            margin-top: 0;
+            width: rem(150);
+            height: rem(150);
+            position: absolute;
+            inset-inline-end: 15%;
+            inset-block-end: 35%;
+            border-radius: 50%;
+            background: hsl(var(--danger));
+            color: hsl(var(--light));
+            font-size: rem(18);
+            isolation: unset;
+            overflow: unset;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: hsl(var(--base-100)/.5);
+                border-radius: 50%;
+                opacity: 0.8;
+                z-index: -1;
+                animation: pulse 2s ease-out infinite;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: hsl(var(--base-100)/.5);
+                border-radius: 50%;
+                opacity: 0.8;
+                z-index: -1;
+                animation: pulse 2s 1s ease-out infinite;
+            }
+
+            span {
+                font-size: rem(40);
+                font-weight: 700;
+                line-height: 1;
+            }
+
+            &:hover {
+                color: hsl(var(--light));
+            }
+        }
+    }
+}

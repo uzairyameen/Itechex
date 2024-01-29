@@ -1,0 +1,17 @@
+.video-section {
+    position: relative;
+    isolation: isolate;
+    background-image: url(../images/video-section-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: #4637A1;
+        opacity: .8;
+        z-index: -1;
+    }
+}

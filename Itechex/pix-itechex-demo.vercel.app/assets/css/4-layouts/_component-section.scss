@@ -1,0 +1,26 @@
+.component-section {
+    position: relative;
+    isolation: isolate;
+    background-image: url(../images/component-section-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::before {
+        @include screen(xxl-x) {
+            content: url(../images/element-17.png);
+            position: absolute;
+            inset-block-start: rem(48);
+            inset-inline-start: rem(48);
+        }
+    }
+
+    &::after {
+        @include screen(xxl-x) {
+            content: url(../images/element-18.png);
+            position: absolute;
+            inset-block-start: rem(120);
+            inset-inline-end: rem(200);
+        }
+    }
+}

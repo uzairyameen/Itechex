@@ -1,0 +1,14 @@
+.review-section {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        @include screen(xxl-x) {
+            content: url(../images/review-bg.png);
+            position: absolute;
+            inset-inline-end: 0;
+            inset-block-end: rem(60);
+            z-index: -1;
+        }
+    }
+}

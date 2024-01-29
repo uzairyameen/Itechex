@@ -1,0 +1,45 @@
+.tab-list {
+    @include screen(sm) {
+        display: inline-flex;
+        padding: .25rem;
+        border: 1px solid hsl(var(--neutral-800)/.5);
+        border-radius: .25rem;
+    }
+
+    li {
+        position: relative;
+        isolation: isolate;
+    }
+
+    &__btn {
+        padding: .25rem .5rem;
+        background-color: transparent;
+        border: 1px solid hsl(var(--stroke));
+        border-radius: .25rem;
+        color: hsl(var(--heading));
+
+        @include screen(sm) {
+            border: 0;
+        }
+
+        @include screen(xl) {
+            padding-inline: 1rem;
+        }
+    }
+
+    li+li {
+        @include screen(sm) {
+            margin-inline-start: .5rem;
+            padding-inline-start: .5rem;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset-block: .5rem;
+                inset-inline-start: 0;
+                width: 1px;
+                background: hsl(var(--neutral-800)/.5);
+            }
+        }
+    }
+}

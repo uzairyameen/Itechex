@@ -1,0 +1,72 @@
+.inner-sub {
+    --gap: 0;
+    min-width: 15rem;
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: calc(100% - 1rem);
+    background: hsl(var(--neutral));
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all .3s ease;
+
+    &>li {
+        &:last-child {
+            border-bottom: 0.25rem solid hsl(var(--accent));
+
+            &:hover {
+                border-color: hsl(var(--base-700));
+            }
+
+            .inner-sub__link {
+                border-block-end: none;
+            }
+        }
+
+        &:hover {
+            .inner-sub__link {
+                background: hsl(var(--base-600)/.9);
+                color: hsl(var(--neutral));
+
+                &.has-sub {
+                    &::after {
+                        content: "\e5cc";
+                    }
+                }
+            }
+
+            .deep-sub {
+                inset-inline-start: 100%;
+                visibility: visible;
+                opacity: 1;
+                pointer-events: unset;
+            }
+        }
+
+    }
+
+    &__link {
+        display: flex;
+        padding: .5rem 1.5rem;
+        border-block-end: 1px solid hsl(var(--border)/.5);
+        font-size: 1rem;
+        color: hsl(var(--text));
+        text-decoration: none;
+        transition: all .3s ease;
+
+        &.has-sub {
+            position: relative;
+            isolation: isolate;
+            justify-content: space-between;
+
+            &::after {
+                content: "\e5cf";
+                font-family: 'Material Symbols Rounded';
+                font-weight: 300;
+                display: grid;
+                place-content: center;
+                pointer-events: none;
+            }
+        }
+    }
+}

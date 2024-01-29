@@ -1,0 +1,91 @@
+.service-card {
+    --display: flex;
+    --flex-dir: row;
+    --gap: .75rem;
+    --padding-x: .75rem;
+    --padding-y: 1rem;
+    --border-clr: hsl(var(--stroke)/.5);
+    --rounded: .5rem;
+    --bg: hsl(var(--neutral));
+    display: var(--display);
+    flex-direction: var(--flex-dir);
+    gap: var(--gap);
+    padding: var(--padding-y) var(--padding-x);
+    border: 1px solid var(--border-clr);
+    border-radius: var(--rounded);
+    background: var(--bg);
+    transition: all .3s ease;
+
+    &__number {
+        display: flex;
+        justify-content: flex-end;
+        overflow: hidden;
+
+        &-is {
+            width: rem(48);
+            height: rem(48);
+            display: grid;
+            place-content: center;
+            margin: 0;
+            margin-inline-end: rem(44);
+            position: relative;
+            isolation: isolate;
+            border: 1px solid hsl(var(--border));
+            border-radius: 50%;
+            font-weight: 700;
+
+            &::before {
+                content: '';
+                position: absolute;
+                right: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 500%;
+                border-bottom: 1px solid hsl(var(--divider)/.8);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 200%;
+                border-bottom: 1px solid hsl(var(--divider)/.8);
+            }
+        }
+    }
+
+    &--1 {
+        @include screen(xs-plus) {
+            --gap: 1rem;
+            --padding-x: 1rem;
+            --padding-y: 1.5rem;
+        }
+
+        @include screen(sm) {
+            --gap: 2rem;
+            --padding-x: 2rem;
+            --padding-y: 2.5rem;
+        }
+
+        @include screen(md) {
+            --gap: 1rem;
+            --padding-x: 1rem;
+            --padding-y: 1.5rem;
+        }
+
+        @include screen(xxl) {
+            --gap: 1.5rem;
+            --padding-x: 2rem;
+            --padding-y: 2rem;
+        }
+
+        &:hover {
+            --bg: hsl(var(--white));
+            --border-clr: hsl(var(--stroke)/.1);
+            box-shadow: 0 0 2rem hsl(var(--shadow)/.05);
+        }
+    }
+
+}

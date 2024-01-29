@@ -1,0 +1,18 @@
+.about-section-1 {
+    position: relative;
+    isolation: isolate;
+
+    @include screen(xl) {
+        &::after {
+            content: '';
+            position: absolute;
+            inset-block: 8%;
+            inset-inline: 25%;
+            background-image: url(../images/about-bg.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+    }
+}

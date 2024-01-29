@@ -1,0 +1,14 @@
+.service-section-2 {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset-inline: 0;
+        inset-block-start: 0;
+        height: 70%;
+        background: hsl(var(--neutral-100));
+        z-index: -1;
+    }
+}

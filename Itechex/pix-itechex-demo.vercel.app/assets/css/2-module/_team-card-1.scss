@@ -1,0 +1,50 @@
+.team-card-1 {
+    padding: rem(32);
+    position: relative;
+    isolation: isolate;
+    background-color: hsl(var(--white));
+    border-radius: .5rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        background-image: linear-gradient(hsl(var(--neutral-200)), hsl(var(--base)));
+        border-radius: inherit;
+        z-index: -2;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(hsl(var(--white)), hsl(var(--base)/.05));
+        border-radius: inherit;
+        z-index: -1;
+    }
+
+    &__img {
+        display: inline-block;
+        position: relative;
+        isolation: isolate;
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: -1.5rem;
+            background-image: url(../images/element-8.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        &-is {
+            width: rem(160);
+            height: rem(160);
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+        }
+    }
+}

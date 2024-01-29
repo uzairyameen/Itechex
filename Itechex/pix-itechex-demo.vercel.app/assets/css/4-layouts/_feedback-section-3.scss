@@ -1,0 +1,83 @@
+.feedback-section-3 {
+    position: relative;
+    isolation: isolate;
+
+    &__element {
+        display: none;
+
+        @include screen(xxl-xx) {
+            display: block;
+            position: absolute;
+
+            &-1 {
+                inset-block-start: rem(190);
+                inset-inline-start: rem(90);
+            }
+
+            &-2 {
+                inset-block-start: rem(148);
+                inset-inline-start: rem(90);
+                animation: imageBeat 20s linear infinite;
+            }
+
+            &-3 {
+                inset-block-start: rem(160);
+                inset-inline-start: rem(290);
+                animation: circle 15s linear infinite;
+            }
+
+            &-4 {
+                inset-block-start: rem(78);
+                inset-inline-start: rem(50);
+                animation: circle 25s linear infinite alternate-reverse;
+            }
+
+            &-5 {
+                inset-block-start: rem(275);
+                inset-inline-end: rem(160);
+            }
+
+            &-6 {
+                inset-block-start: rem(232);
+                inset-inline-end: rem(195);
+                animation: imageBeat 20s linear infinite;
+            }
+
+            &-7 {
+                inset-block-start: rem(240);
+                inset-inline-end: rem(105);
+                animation: circle 15s linear infinite;
+            }
+
+            &-8 {
+                inset-block-start: rem(160);
+                inset-inline-end: rem(295);
+                animation: circle 25s linear infinite
+            }
+
+            &-9 {
+                inset-block-start: rem(290);
+                inset-inline-start: rem(270);
+                animation: circle 35s linear infinite;
+            }
+
+            &-10 {
+                inset-block-start: rem(580);
+                inset-inline-start: rem(260);
+                animation: circle 25s linear infinite alternate-reverse;
+            }
+
+            &-11 {
+                inset-block-start: rem(512);
+                inset-inline-end: rem(320);
+                animation: circle 35s linear infinite;
+            }
+
+            &-12 {
+                inset-block-start: rem(800);
+                inset-inline-end: rem(295);
+                animation: circle 25s linear infinite alternate-reverse;
+            }
+        }
+    }
+}

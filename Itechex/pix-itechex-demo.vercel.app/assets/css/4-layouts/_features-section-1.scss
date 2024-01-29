@@ -1,0 +1,14 @@
+.features-section-1 {
+    @include screen(xxl) {
+        position: relative;
+        isolation: isolate;
+
+        &::after {
+            content: url(../images/element-6.png);
+            position: absolute;
+            inset-block-start: 0;
+            inset-inline-end: 0;
+            z-index: -1;
+        }
+    }
+}

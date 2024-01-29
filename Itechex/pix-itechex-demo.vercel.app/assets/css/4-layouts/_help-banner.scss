@@ -1,0 +1,43 @@
+.help-banner {
+    padding-inline: .5rem;
+    border-radius: 1rem;
+    background-color: hsl(var(--base));
+
+    @include screen(xs) {
+        padding-inline: 1.5rem;
+    }
+
+    @include screen(md) {
+        padding-inline: 2rem;
+    }
+
+    @include screen(lg) {
+        position: relative;
+        isolation: isolate;
+
+    }
+
+    @include screen(xl) {
+        padding-inline: rem(60);
+    }
+
+    &__img {
+        display: none;
+        position: absolute;
+        inset-inline-start: 70%;
+        inset-inline-end: 0;
+        inset-block-start: rem(60);
+        inset-block-end: 0;
+        overflow: hidden;
+
+        @include screen(lg) {
+            display: block;
+        }
+
+        &-is {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}

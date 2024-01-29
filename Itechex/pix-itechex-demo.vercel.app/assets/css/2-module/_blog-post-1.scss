@@ -1,0 +1,49 @@
+.blog-post-1 {
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    background: hsl(var(--white));
+    border: 1px solid hsl(var(--blog-post-border));
+    border-radius: .5rem;
+
+    &--xl {
+        padding: 1rem;
+        gap: 1rem;
+
+        .blog-post-1__body {
+            @include screen(sm) {
+                padding: 1rem 1.5rem;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        width: 100%;
+        border-radius: .5rem;
+        overflow: hidden;
+
+        &:hover {
+            .blog-post-1__img {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all .3s ease;
+        transform: scale(1.01);
+    }
+
+    &__body {
+        padding: .5rem;
+
+        @include screen(xl) {
+            padding: 1rem;
+        }
+    }
+}

@@ -1,0 +1,163 @@
+.t-heading-font {
+  font-family: var(--heading-font);
+}
+
+.t-body-font {
+  font-family: var(--body-font);
+}
+
+.t-short-para {
+  max-width: 50ch;
+}
+
+.t-link {
+  text-decoration: none;
+  transition: all .3s ease;
+
+  &--base {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    color: hsl(var(--base));
+
+    &:hover {
+      color: hsl(var(--base-600));
+    }
+
+    &-icon {
+      display: inline-block;
+      font-size: 1.25rem;
+      line-height: .75;
+    }
+  }
+
+  &--light {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    color: hsl(var(--light));
+
+    &:hover {
+      color: hsl(var(--base-600));
+    }
+
+    &-icon {
+      display: inline-block;
+      font-size: 1.25rem;
+      line-height: .75;
+    }
+  }
+}
+
+.t-shadow {
+  box-shadow: 0 2px rem(20) hsl(var(--shadow)/.1);
+}
+
+[data-bs-theme="dark"] {
+  .t-shadow {
+    box-shadow: 0 2px rem(20) hsl(var(--shadow)/.6);
+  }
+}
+
+.t-be-md-0 {
+  @include screen(md) {
+    border-inline-end: 0 !important;
+  }
+}
+
+.t-be-lg-0 {
+  @include screen(lg) {
+    border-inline-end: 0 !important;
+  }
+}
+
+.max-text-18 {
+  max-width: 18ch;
+}
+
+.max-text-20 {
+  max-width: 20ch;
+}
+
+.max-text-24 {
+  max-width: 24ch;
+}
+
+.max-text-40 {
+  max-width: 40ch;
+}
+
+.max-text-50 {
+  max-width: 50ch;
+}
+
+.max-text-60 {
+  max-width: 60ch;
+}
+
+.max-text-70 {
+  max-width: 70ch;
+}
+
+.w-95 {
+  width: 95%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-85 {
+  width: 85%;
+}
+
+.top-60 {
+  top: rem(60);
+}
+
+.position-xl-absolute {
+  @include screen(xl) {
+    position: absolute;
+  }
+}
+
+.t-border-base {
+  border-color: hsl(var(--base)) !important;
+}
+
+.placeholder-clr {
+  &::placeholder {
+    color: hsl(var(--placeholder-clr));
+  }
+}
+
+
+
+.yellow-input {
+  background: #FFD98B;
+  color: hsl(var(--dark)) !important;
+
+  &::after {
+    color: hsl(var(--dark));
+  }
+
+  .form-select {
+    color: hsl(var(--dark));
+  }
+}
+
+.rounded-8 {
+  border-radius: 2rem;
+}
+
+.dash-line {
+  display: inline-block;
+  width: 48px;
+  height: 1px;
+  background: hsl(var(--light));
+
+  &-container {
+    display: grid;
+    place-content: center;
+  }
+}

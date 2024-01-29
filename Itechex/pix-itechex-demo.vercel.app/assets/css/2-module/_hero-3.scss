@@ -1,0 +1,102 @@
+.hero-3 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: hsl(var(--neutral-100)/.75);
+        z-index: -1;
+
+        @include screen(xxl-xx) {
+            display: none;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url(../images/hero-3-bg.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -2;
+
+        @include screen(xxl-xx) {
+            inset-inline-start: 40%;
+            background-position: left bottom;
+            mask-image: url(../images/hero-3-mask.png);
+            -webkit-mask-image: url(../images/hero-3-mask.png);
+            mask-size: contain;
+            -webkit-mask-size: contain;
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            mask-position: right top;
+            -webkit-mask-position: right top;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: calc(100vh - #{rem(112)});
+        padding-top: clamp(3.75rem, 6.5vw, 7.5rem);
+        padding-bottom: clamp(3.75rem, 6.5vw, 7.5rem);
+
+        @include screen(md) {
+            min-height: calc(80vh - #{rem(120)});
+        }
+
+        @include screen(lg) {
+            min-height: calc(90vh - #{rem(120)});
+        }
+
+        @include screen(xl) {
+            min-height: calc(100vh - #{rem(120)});
+        }
+    }
+
+    &__element {
+        display: none;
+
+        @include screen(xxl-x) {
+            display: block;
+            position: absolute;
+            opacity: .75;
+        }
+
+        &-1 {
+            inset-block-start: rem(200);
+            inset-inline-start: rem(80);
+        }
+
+        &-2 {
+            inset-block-start: rem(160);
+            inset-inline-start: rem(80);
+            animation: imageBeat 20s linear infinite;
+        }
+
+        &-3 {
+            inset-block-start: rem(220);
+            inset-inline-start: rem(280);
+            animation: circle 15s linear infinite;
+        }
+
+        &-4 {
+            inset-block-start: rem(120);
+            inset-inline-start: rem(200);
+            animation: circle 25s linear infinite alternate-reverse;
+        }
+    }
+}
+
+[dir="rtl"] {
+    .hero-3::after {
+        transform: scaleX(-1);
+    }
+}

@@ -1,0 +1,9 @@
+.element {
+    display: none;
+
+    @include screen(xxl) {
+        display: block;
+        position: absolute;
+        z-index: -1;
+    }
+}

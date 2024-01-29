@@ -1,0 +1,254 @@
+.header {
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 1.25rem;
+    }
+
+    &--1 {
+        .primary-menu {
+            padding: .5rem .75rem;
+            position: relative;
+            margin-bottom: -2.25rem;
+            background: hsl(var(--base-700));
+            border-radius: .25rem;
+
+            &__list {
+                &>li {
+                    &:hover {
+                        .primary-menu__link {
+                            color: hsl(var(--accent));
+                        }
+                    }
+                }
+            }
+
+            &__link {
+                color: hsl(var(--neutral));
+            }
+        }
+    }
+
+    &--2 {
+        background: hsl(var(--white));
+
+        @include screen(xl) {
+            .primary-menu {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+            }
+
+            .primary-menu__list {
+                position: unset;
+
+                &>li {
+                    &:hover {
+                        .primary-menu__link {
+                            color: hsl(var(--base));
+                        }
+                    }
+                }
+            }
+
+            .primary-menu__link {
+                padding: 1.5rem 1.25rem;
+                color: hsl(var(--heading));
+            }
+
+            .inner-sub {
+                min-width: 10rem;
+                left: auto;
+            }
+
+            .deep-sub {
+                left: auto;
+                right: 100%;
+            }
+
+            .inner-sub>li:hover .deep-sub {
+                right: 100%;
+                left: auto;
+            }
+
+            .dark-mode-toggle {
+                color: hsl(var(--heading));
+
+                &:hover {
+                    color: hsl(var(--base));
+                }
+            }
+        }
+    }
+
+    &--3 {
+        background: hsl(var(--white)/.2);
+
+        @include screen(xl) {
+            .primary-menu {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+            }
+
+            .primary-menu__list {
+                position: unset;
+
+                &>li {
+                    &:hover {
+                        .primary-menu__link {
+                            color: hsl(var(--base));
+                        }
+                    }
+                }
+            }
+
+            .primary-menu__link {
+                padding: 1.5rem 1.25rem;
+                color: hsl(var(--heading));
+            }
+
+            .inner-sub {
+                min-width: 10rem;
+                left: auto;
+            }
+
+            .deep-sub {
+                left: auto;
+                right: 100%;
+            }
+
+            .inner-sub>li:hover .deep-sub {
+                right: 100%;
+                left: auto;
+            }
+
+            .dark-mode-toggle {
+                color: hsl(var(--heading));
+
+                &:hover {
+                    color: hsl(var(--base));
+                }
+            }
+        }
+    }
+
+    &--4 {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+        background: hsl(var(--white)/.5);
+        transition: all .3s ease;
+
+        @include screen(xl) {
+            background: hsl(var(--white)/.2);
+
+            .primary-menu {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+            }
+
+            .primary-menu__list {
+                position: unset;
+
+                &>li {
+                    &:hover {
+                        .primary-menu__link {
+                            color: hsl(var(--base));
+                        }
+                    }
+                }
+            }
+
+            .primary-menu__link {
+                padding: 1.5rem 1.25rem;
+                color: hsl(var(--heading));
+            }
+
+            .inner-sub {
+                min-width: 10rem;
+                left: auto;
+            }
+
+            .deep-sub {
+                left: auto;
+                right: 100%;
+            }
+
+            .inner-sub>li:hover .deep-sub {
+                right: 100%;
+                left: auto;
+            }
+
+            .dark-mode-toggle {
+                color: hsl(var(--heading));
+
+                &:hover {
+                    color: hsl(var(--base));
+                }
+            }
+        }
+    }
+
+    &--5 {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+        background: hsl(var(--base-800));
+        transition: all .3s ease;
+
+        @include screen(xl) {
+            background: hsl(var(--base-800));
+
+            .primary-menu {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+            }
+
+            .primary-menu__list {
+                position: unset;
+
+                &>li {
+                    &:hover {
+                        .primary-menu__link {
+                            color: hsl(var(--accent));
+                        }
+                    }
+                }
+            }
+
+            .primary-menu__link {
+                padding: 1.5rem 1.25rem;
+                color: hsl(var(--light));
+            }
+
+            .inner-sub {
+                min-width: 10rem;
+                left: auto;
+            }
+
+            .deep-sub {
+                left: auto;
+                right: 100%;
+            }
+
+            .inner-sub>li:hover .deep-sub {
+                right: 100%;
+                left: auto;
+            }
+
+            .dark-mode-toggle {
+                color: hsl(var(--light));
+
+                &:hover {
+                    color: hsl(var(--accent));
+                }
+            }
+        }
+    }
+}

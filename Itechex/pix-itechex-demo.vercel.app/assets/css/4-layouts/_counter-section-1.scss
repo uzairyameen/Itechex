@@ -1,0 +1,52 @@
+.counter-section-1 {
+    &__top {
+        position: relative;
+        isolation: isolate;
+        background-image: url('../images/counter-bg-1.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include screen(xl) {
+            padding-bottom: clamp(10rem, 10vw, 14rem);
+        }
+
+        @include screen(xxl-x) {
+            &::before {
+                content: '';
+                width: rem(600);
+                height: rem(400);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-image: url('../images/element-4.png');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            &::after {
+                content: '';
+                width: rem(800);
+                height: rem(450);
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background-image: url('../images/element-5.png');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &__bottom {
+        padding-bottom: 0;
+
+        @include screen(xl) {
+            padding-top: 0;
+            position: relative;
+            margin-top: -#{rem(80)};
+        }
+    }
+}

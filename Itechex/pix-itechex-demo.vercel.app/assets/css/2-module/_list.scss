@@ -1,0 +1,253 @@
+$list-directions: (
+    row: (sm, md, lg, xl, xxl),
+    column: (sm, md, lg, xl, xxl)
+);
+
+.list {
+    --direction: column;
+    --gap: 1rem;
+    display: flex;
+    flex-direction: var(--direction);
+    gap: var(--gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-row {
+        --direction: row;
+    }
+
+    &-0 {
+        --gap: 0;
+    }
+
+    &-xxs {
+        --gap: .25rem;
+    }
+
+    &-xxs {
+        --gap: .25rem;
+    }
+
+    &-xs {
+        --gap: .5rem;
+    }
+
+    &-xsm {
+        --gap: .75rem;
+    }
+
+    &-sm {
+        --gap: 1rem;
+    }
+
+    &-xmd {
+        --gap: 1.25rem;
+    }
+
+    &-md {
+        --gap: 1.5rem;
+    }
+
+    &-xlg {
+        --gap: 1.75rem;
+    }
+
+    &-lg {
+        --gap: 2rem;
+    }
+
+    &-xl {
+        --gap: 2.5rem;
+    }
+
+    &-xxl {
+        --gap: 2.75rem;
+    }
+
+    &-exl {
+        --gap: 3.75rem;
+    }
+
+    &--divider {
+        --gap: 0;
+
+        &>li {
+            padding-inline: 1rem;
+            margin-block: .25rem;
+            border-inline-end: 1px solid hsl(var(--stroke));
+
+            &:first-child {
+                padding-inline-start: 0;
+            }
+
+            &:last-child {
+                padding-inline-end: 0;
+                border-inline-end: none;
+            }
+        }
+    }
+
+    &--check {
+        >li {
+            display: flex;
+            gap: .5rem;
+
+            &::before {
+                content: '\e876';
+                width: rem(20);
+                height: rem(20);
+                flex-shrink: 0;
+                display: grid;
+                place-content: center;
+                border-radius: 50%;
+                margin-top: .25rem;
+                font-family: 'Material Symbols Rounded';
+                font-weight: 200;
+            }
+        }
+    }
+
+    &--check-end {
+        >li {
+            display: flex;
+            gap: .5rem;
+
+            &::after {
+                content: '\e876';
+                width: rem(20);
+                height: rem(20);
+                display: grid;
+                place-content: center;
+                border-radius: 50%;
+                font-family: 'Material Symbols Rounded';
+                font-weight: 200;
+            }
+        }
+    }
+
+    &.list-disc {
+        >li {
+            display: flex;
+            gap: .75rem;
+            position: relative;
+            isolation: isolate;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: .5rem;
+                height: .5rem;
+                margin-top: .5rem;
+                flex-shrink: 0;
+                border-radius: 50%;
+            }
+        }
+
+        &--light {
+            >li {
+                &::before {
+                    background: hsl(var(--light));
+                }
+            }
+        }
+
+        &--dark {
+            >li {
+                &::before {
+                    background: hsl(var(--heading));
+                }
+            }
+        }
+
+        &--base {
+            >li {
+                &::before {
+                    background: hsl(var(--base));
+                }
+            }
+        }
+        &--gray {
+            >li {
+                &::before {
+                    background: hsl(var(--bullet-light));
+                }
+            }
+        }
+    }
+
+    &.check-base {
+        >li {
+            &::before {
+                background: hsl(var(--base));
+                color: hsl(var(--light));
+            }
+
+            &::after {
+                background: hsl(var(--base));
+                color: hsl(var(--light));
+            }
+        }
+    }
+
+    &.check-accent {
+        >li {
+            &::before {
+                background: hsl(var(--accent));
+                color: hsl(var(--black));
+            }
+
+            &::after {
+                background: hsl(var(--accent));
+                color: hsl(var(--black));
+            }
+        }
+    }
+
+    &.check-light {
+        >li {
+            &::before {
+                background: hsl(var(--light));
+                color: hsl(var(--base-700));
+            }
+
+            &::after {
+                background: hsl(var(--light));
+                color: hsl(var(--base-700));
+            }
+        }
+    }
+
+    &.bordered-bottom {
+        >li {
+            padding-block: 1rem;
+            border-block-end: 1px solid hsl(var(--divider)/.5);
+
+            &:last-child {
+                border-block-end: none;
+                padding-block-end: 0;
+            }
+        }
+    }
+}
+
+@each $direction,
+$screen in $list-directions {
+    @each $screen-size in $screen {
+        .list-#{$screen-size}-#{$direction} {
+            @include screen(#{$screen-size}) {
+                --direction: #{$direction};
+            }
+        }
+    }
+}
+
+@supports not (gap: 1rem) {
+    .list {
+        margin: -0.5rem;
+    }
+
+    .list>* {
+        margin: 0.5rem;
+    }
+}

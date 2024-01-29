@@ -1,0 +1,19 @@
+.question-card {
+    padding: 2rem;
+    background-color: hsl(var(--white));
+    border: 1px solid #BFBFE0;
+    border-radius: 1rem;
+    transition: all .3s ease;
+
+    &:hover {
+        background-color: hsl(var(--base));
+
+        .question-card__title {
+            color: hsl(var(--white));
+        }
+
+        .question-card__link {
+            color: hsl(var(--accent));
+        }
+    }
+}

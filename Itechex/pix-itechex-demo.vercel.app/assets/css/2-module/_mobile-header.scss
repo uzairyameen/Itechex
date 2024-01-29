@@ -1,0 +1,13 @@
+.mobile-header {
+    padding-block: .5rem;
+
+    @include screen(xl) {
+        display: none;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

@@ -1,0 +1,13 @@
+.cta-section-3 {
+    padding-block: 1.5rem;
+    background: hsl(var(--white));
+    border-radius: 1rem;
+
+    @include screen(xs) {
+        padding: 2rem 1rem;
+    }
+
+    @include screen(xl) {
+        padding: 2rem;
+    }
+}

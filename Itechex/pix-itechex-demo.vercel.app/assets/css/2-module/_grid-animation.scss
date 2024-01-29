@@ -1,0 +1,121 @@
+.grid-animation {
+    position: relative;
+    isolation: isolate;
+
+    @include screen(xxl-xx) {
+        padding-top: clamp(3.75rem, 6.5vw, 7.5rem);
+        padding-bottom: clamp(3.75rem, 6.5vw, 7.5rem);
+    }
+
+    &__line-wrapper {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        padding-inline: 2px;
+        z-index: -1;
+        overflow: hidden;
+
+        @include screen(xl) {
+            display: block;
+        }
+
+        &:nth-of-type(1) {
+            left: 0;
+
+            .grid-animation__line {
+                &::before {
+                    animation: grid-line 5s linear infinite;
+                }
+
+                &::after {
+                    animation: grid-line 5s linear 2.5s infinite;
+                }
+            }
+        }
+
+        &:nth-of-type(2) {
+            left: 25%;
+
+            .grid-animation__line {
+                &::before {
+                    animation: grid-line 7s linear 1s infinite;
+                }
+
+                &::after {
+                    animation: grid-line 7s linear 5s infinite;
+                }
+            }
+        }
+
+        &:nth-of-type(3) {
+            left: 50%;
+
+            .grid-animation__line {
+                &::before {
+                    animation: grid-line 5s linear 2s infinite;
+                }
+
+                &::after {
+                    animation: grid-line 5s linear 4s infinite;
+                }
+            }
+        }
+
+        &:nth-of-type(4) {
+            left: 75%;
+
+            .grid-animation__line {
+                &::before {
+                    animation: grid-line 5s linear infinite;
+                }
+
+                &::after {
+                    animation: grid-line 5s linear 2.5s infinite;
+                }
+            }
+        }
+
+        &:nth-of-type(5) {
+            left: 100%;
+
+            .grid-animation__line {
+                &::before {
+                    animation: grid-line 7s linear 1s infinite;
+                }
+
+                &::after {
+                    animation: grid-line 7s linear 5s infinite;
+                }
+            }
+        }
+    }
+
+    &__line {
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background: hsl(var(--neutral-700)/.25);
+
+
+        &::before {
+            content: '';
+            width: 4px;
+            height: rem(48);
+            position: absolute;
+            top: 100%;
+            left: calc(50% - 2px);
+            background: linear-gradient(hsl(var(--base)), transparent);
+        }
+
+        &::after {
+            content: '';
+            width: 4px;
+            height: rem(48);
+            position: absolute;
+            top: 100%;
+            left: calc(50% - 2px);
+            background: linear-gradient(hsl(var(--base)), transparent);
+        }
+    }
+}

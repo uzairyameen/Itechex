@@ -1,0 +1,80 @@
+.mega-menu--container {
+    position: unset !important;
+
+    &:hover {
+        .mega-menu {
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: unset;
+        }
+    }
+}
+
+.mega-menu {
+    --gap: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    min-width: 44rem;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.5rem);
+    background: hsl(var(--neutral));
+    transition: all .3s ease;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    &__title {
+        display: block;
+        padding: 0 .5rem .5rem;
+        font-size: .875rem;
+        font-weight: 500;
+        color: hsl(var(--heading));
+        text-transform: uppercase;
+    }
+
+    &__link {
+        display: inline-flex;
+        padding: .5rem .25rem;
+        position: relative;
+        isolation: isolate;
+        font-size: 1rem;
+        color: hsl(var(--text));
+        text-decoration: none;
+        transition: all .3s ease;
+
+        &:hover {
+            color: hsl(var(--base));
+
+            &::after {
+                width: 100%;
+                left: 0;
+                right: auto;
+            }
+        }
+
+        &::after {
+            content: '';
+            width: 0;
+            height: 1px;
+            position: absolute;
+            left: auto;
+            right: 0;
+            bottom: 0.25rem;
+            z-index: -1;
+            background-color: hsl(var(--base));
+            transition: all .3s ease;
+        }
+    }
+
+    &__list {
+        --gap: 0;
+
+        >li {
+            min-width: 15rem;
+        }
+    }
+}

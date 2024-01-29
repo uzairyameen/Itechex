@@ -1,0 +1,15 @@
+[dir="rtl"] {
+    .hero-1__masked {
+        transform: scaleX(-1);
+    }
+
+    .mat-icon {
+        transform: scaleX(-1);
+    }
+
+    .about-img__content-xl {
+        @include screen(xxl-xx) {
+            transform: translateX(0);
+        }
+    }
+}

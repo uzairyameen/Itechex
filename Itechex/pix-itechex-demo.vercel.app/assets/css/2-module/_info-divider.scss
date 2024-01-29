@@ -1,0 +1,51 @@
+.info-divider {
+    flex-direction: row;
+    --gap: 1.5rem;
+    margin-inline-start: auto;
+    margin-inline-end: 1.5rem;
+
+    @include screen(xxl) {
+        margin-inline-end: 3.75rem;
+    }
+
+    li {
+        padding-inline-end: 1.5rem;
+        position: relative;
+        isolation: isolate;
+
+        &:last-child {
+            padding-inline-end: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset-block: 0;
+            inset-inline-end: 0;
+            width: 1px;
+            height: 100%;
+            background: hsl(var(--divider));
+        }
+    }
+
+    &__content {
+        flex-grow: 1;
+
+        &-title {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.2;
+            color: hsl(var(--heading));
+        }
+
+        &-text {
+            display: block;
+            font-size: 1rem;
+            color: hsl(var(--text));
+        }
+    }
+}

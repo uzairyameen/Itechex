@@ -1,0 +1,10 @@
+.logo {
+    display: inline-block;
+    max-width: 10.75rem;
+    height: 3rem;
+    object-fit: contain;
+
+    &__light {
+        display: none;
+    }
+}

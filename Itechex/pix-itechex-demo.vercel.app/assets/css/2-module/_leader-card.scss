@@ -1,0 +1,32 @@
+.leader-card {
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 1px solid hsl(var(--stroke));
+    border-radius: 2rem;
+
+    @include screen(sm) {
+        padding: 1.5rem;
+    }
+
+    @include screen(md) {
+        padding: 1rem;
+    }
+
+    @include screen(xl) {
+        padding: 1.5rem;
+    }
+
+    &__img {
+        border-radius: 2rem;
+        width: 100%;
+        overflow: hidden;
+
+        &-is {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,117 @@
+.about-company-1 {
+    @include screen(xxl-xx) {
+        position: relative;
+        isolation: isolate;
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset-block-start: 0;
+            inset-inline-start: -#{rem(80)};
+            width: rem(400);
+            height: rem(400);
+            background-image: url(../images/element-2.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: .5;
+            animation: rotates 60s linear infinite;
+        }
+    }
+
+    &__img {
+        position: relative;
+        isolation: isolate;
+
+        @include screen(xxl-xx) {
+            &::after {
+                content: '';
+                width: rem(400);
+                height: rem(400);
+                position: absolute;
+                inset-block-start: -6rem;
+                inset-inline-end: -6rem;
+                background-image: url(../images/element-3.png);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: -1;
+                animation: rotates 60s linear infinite;
+            }
+        }
+
+        &-start {
+            position: relative;
+            isolation: isolate;
+
+            @include screen(xxl-xx) {
+                &::after {
+                    content: '';
+                    width: rem(450);
+                    height: rem(450);
+                    position: absolute;
+                    inset-block-start: 0;
+                    inset-inline-start: -3rem;
+                    background-image: url(../images/element-3.png);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    z-index: -1;
+                    animation: rotates 60s linear infinite;
+                }
+            }
+        }
+
+        &>img {
+            @include screen(md) {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-wrapper {
+            max-width: rem(270);
+            display: inline-block;
+            padding: rem(20) rem(20);
+            position: absolute;
+            inset-block-start: 0;
+            inset-inline-end: 0;
+            background: hsl(var(--secondary));
+            text-align: center;
+
+            @include screen(xl) {
+                inset-block-start: -1rem;
+                inset-inline-end: -1rem;
+            }
+
+            @include screen(xxl) {
+                padding: rem(60) rem(32);
+                inset-block-start: -2rem;
+                inset-inline-end: -2rem;
+            }
+            @include screen(xxl-xx) {
+                padding: rem(60) rem(32);
+                inset-block-start: -3rem;
+                inset-inline-end: -3rem;
+            }
+        }
+
+        &-title {
+            display: block;
+            font-size: clamp(3.2rem, 9.5vw, 11.25rem);
+            font-weight: 700;
+            line-height: .9;
+            -webkit-text-stroke: 2px hsl(var(--light));
+            -webkit-text-fill-color: hsl(var(--secondary));
+        }
+
+        &-subtitle {
+            font-size: 1rem;
+            color: hsl(var(--light));
+
+            @include screen(xxl) {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+.hero-slider-2 {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+        padding-top: clamp(3.75rem, 6.5vw, 7.5rem);
+        padding-bottom: clamp(3.75rem, 6.5vw, 7.5rem);
+        position: relative;
+        isolation: isolate;
+        background-color: hsl(var(--white));
+
+        @include screen(md) {
+            min-height: 70vh;
+        }
+
+        @include screen(lg) {
+            min-height: 100vh;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background-color: hsl(var(--light)/.85);
+
+            @include screen(lg) {
+                display: none;
+            }
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+
+        @include screen(lg) {
+            inset-inline-start: 50%;
+            background-size: 100% 100%;
+        }
+
+        @include screen(xl) {
+            inset-inline-start: 55%;
+            background-size: cover;
+        }
+    }
+
+    &__indicator {
+        display: none;
+
+        @include screen(xl) {
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 1rem);
+            z-index: 1;
+            color: hsl(var(--heading));
+            letter-spacing: .05em;
+            font-weight: 500;
+            transform: rotate(90deg) translateX(-100%);
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset-block-start: 50%;
+                inset-inline-end: -50%;
+                transform: translateY(-50%);
+                width: 45%;
+                height: 1px;
+                background: hsl(var(--heading));
+            }
+        }
+    }
+
+    .swiper-button {
+        --swiper-navigation-size: #{rem(20)};
+        --swiper-theme-color: hsl(var(--base));
+        top: calc(100% - var(--swiper-navigation-size));
+        z-index: 99;
+
+        @include screen(md) {
+            top: unset;
+            bottom: clamp(3.75rem, 6.5vw, 7.5rem);
+            margin-top: 0;
+        }
+    }
+
+    .swiper-pagination {
+        color: hsl(var(--heading));
+    }
+
+    .swiper-pagination-fraction {
+        @include screen(md) {
+            bottom: clamp(3.75rem, 6.5vw, 7.5rem);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.process-card-1 {
+    padding: .5rem;
+    background-color: hsl(var(--white));
+    border: 1px solid hsl(var(--stroke));
+    border-radius: .5rem;
+
+    &__img {
+        position: relative;
+        isolation: isolate;
+        border-radius: .5rem;
+
+        &-is {
+            width: 100%;
+            height: auto;
+            border-radius: .5rem;
+        }
+    }
+
+    &__icon {
+        display: inline-grid;
+        place-content: center;
+        width: rem(120);
+        height: rem(120);
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+        background-color: hsl(var(--neutral));
+        border-radius: 50%;
+
+        &-is {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__body {
+        padding: rem(92) 1.5rem 2rem;
+    }
+}

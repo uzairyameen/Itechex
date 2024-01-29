@@ -1,0 +1,38 @@
+.progress {
+    --bs-progress-height: .5rem;
+
+    &--base {
+        --bs-progress-bar-bg: hsl(var(--base));
+        --bs-progress-bg: hsl(var(--base)/.3);
+    }
+
+    &--primary {
+        --bs-progress-bar-bg: hsl(var(--primary));
+        --bs-progress-bg: hsl(var(--primary)/.3);
+    }
+
+    &--secondary {
+        --bs-progress-bar-bg: hsl(var(--secondary));
+        --bs-progress-bg: hsl(var(--secondary)/.3);
+    }
+
+    &--danger {
+        --bs-progress-bar-bg: hsl(var(--danger));
+        --bs-progress-bg: hsl(var(--danger)/.3);
+    }
+
+    &--success {
+        --bs-progress-bar-bg: hsl(var(--success));
+        --bs-progress-bg: hsl(var(--success)/.3);
+    }
+
+    &--warning {
+        --bs-progress-bar-bg: hsl(var(--warning));
+        --bs-progress-bg: hsl(var(--warning)/.3);
+    }
+
+    &--info {
+        --bs-progress-bar-bg: hsl(var(--info));
+        --bs-progress-bg: hsl(var(--info)/.3);
+    }
+}

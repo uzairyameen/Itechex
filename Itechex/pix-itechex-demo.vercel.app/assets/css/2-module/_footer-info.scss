@@ -1,0 +1,35 @@
+.footer-info {
+    padding-bottom: clamp(3.75rem, 6.5vw, 7.5rem);
+
+    @include screen(xl) {
+        padding-bottom: 0;
+        position: relative;
+        transform: translateY(50%);
+        margin-top: -#{rem(80)};
+    }
+
+    &__content {
+        display: grid;
+        gap: 1rem;
+        background: hsl(var(--white));
+
+        @include screen(sm) {
+            grid-template-columns: repeat(auto-fit, minmax(rem(208), 1fr));
+            justify-items: center;
+        }
+
+        @include screen(xl) {
+            padding: rem(40) rem(32);
+            border-radius: 1rem;
+            box-shadow: 0 0 2rem hsl(var(--base-700)/.15);
+        }
+    }
+}
+
+[data-bs-theme="dark"] {
+    .footer-info__content {
+        @include screen(xl) {
+            box-shadow: 0 0 2rem hsl(var(--black)/.5);
+        }
+    }
+}

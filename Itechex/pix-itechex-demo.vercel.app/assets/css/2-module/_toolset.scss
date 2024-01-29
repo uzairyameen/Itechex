@@ -1,0 +1,21 @@
+.toolset {
+    padding: 1.25rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: hsl(var(--neutral-100));
+    border-radius: .5rem;
+    &__icon {
+        width: rem(48);
+        height: rem(48);
+        display: grid;
+        place-content: center;
+        border-radius: .5rem;
+        flex-shrink: 0;
+        background: hsl(var(--white));
+        box-shadow: 0 2px 1rem hsl(var(--shadow)/.1);
+    }
+    &__content {
+        flex-grow: 1;
+    }
+}

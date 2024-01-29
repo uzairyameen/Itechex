@@ -1,0 +1,22 @@
+.help-card {
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #BFBFE0;
+
+    &--hover-base {
+        transition: all .3s ease;
+
+        &:hover {
+            background: hsl(var(--base));
+            h5 {
+                color: hsl(var(--light));
+            }
+            p {
+                color: hsl(var(--light));
+            }
+            a {
+                color: hsl(var(--light));
+            }
+        }
+    }
+}

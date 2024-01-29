@@ -1,0 +1,37 @@
+.newsletter-2 {
+    display: flex;
+    border: 1px solid hsl(var(--stroke));
+    border-radius: .75rem;
+
+    &--light {
+        border-color: hsl(var(--light));
+    }
+
+    @include screen(xs) {
+        padding: .5rem;
+    }
+
+    @include screen(sm) {
+        padding: .75rem;
+    }
+
+    &__input {
+        width: 100%;
+        flex-grow: 1;
+        border: none;
+        background: transparent;
+        color: hsl(var(--white));
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+        &::placeholder {
+            color: hsl(var(--white)/.4);
+        }
+    }
+
+    &__btn {
+        flex-shrink: 0;
+    }
+}

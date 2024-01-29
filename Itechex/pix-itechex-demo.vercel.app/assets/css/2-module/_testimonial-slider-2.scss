@@ -1,0 +1,97 @@
+.testimonial-slider-2 {
+    @include screen(md) {
+        padding-inline: 2rem;
+    }
+
+    &__item {
+        background-color: hsl(var(--white));
+        border-radius: 1rem;
+    }
+
+    &__text {
+        position: relative;
+        isolation: isolate;
+
+        &::before {
+            content: url(../images/quote-start.png);
+            display: none;
+            position: absolute;
+            inset-block-start: 0;
+            inset-inline-end: 100%;
+            transform: translateX(50%);
+
+            @include screen(md) {
+                display: block;
+            }
+        }
+
+        &::after {
+            content: url(../images/quote-end.png);
+            display: none;
+            position: absolute;
+            inset-block-end: 0;
+            inset-inline-start: 100%;
+            transform: translateX(-50%);
+
+            @include screen(md) {
+                display: block;
+            }
+        }
+
+        p {
+            @include screen(md) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &__btn {
+        @include screen(md) {
+            --swiper-navigation-size: #{rem(60)};
+            width: calc(var(--swiper-navigation-size));
+            height: var(--swiper-navigation-size);
+            margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+            display: grid;
+            place-content: center;
+            place-items: center;
+            background-color: hsl(var(--white));
+            border: 1px solid hsl(var(--stroke)/.75);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            z-index: 10;
+            cursor: pointer;
+            transition: all .3s ease;
+
+            &:hover {
+                background: hsl(var(--base));
+
+                .testimonial-slider-2__btn-is {
+                    color: hsl(var(--light));
+                }
+            }
+        }
+
+        &-prev {
+            @include screen(md) {
+                left: 0;
+            }
+        }
+
+        &-next {
+            @include screen(md) {
+                right: 0;
+            }
+        }
+
+        &-is {
+            --swiper-navigation-size: 1.5rem;
+            color: hsl(var(--base));
+
+            @include screen(md) {
+                left: auto !important;
+                right: auto !important;
+            }
+        }
+    }
+}

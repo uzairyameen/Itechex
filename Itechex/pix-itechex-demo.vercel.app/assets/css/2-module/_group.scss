@@ -1,0 +1,80 @@
+.group {
+    --direction: column;
+    --gap: 1rem;
+    display: flex;
+    flex-direction: var(--direction);
+    gap: var(--gap);
+
+    &-row {
+        --direction: row;
+    }
+
+    &-0 {
+        --gap: 0;
+    }
+
+    &-xxs {
+        --gap: .25rem;
+    }
+
+    &-xs {
+        --gap: .5rem;
+    }
+
+    &-xsm {
+        --gap: .75rem;
+    }
+
+    &-sm {
+        --gap: 1rem;
+    }
+
+    &-xmd {
+        --gap: 1.25rem;
+    }
+
+    &-md {
+        --gap: 1.5rem;
+    }
+
+    &-xlg {
+        --gap: 1.75rem;
+    }
+
+    &-lg {
+        --gap: 2rem;
+    }
+
+    &-xl {
+        --gap: 2.5rem;
+    }
+
+    &-xxl {
+        --gap: 2.75rem;
+    }
+
+    &-exl {
+        --gap: 3.75rem;
+    }
+}
+
+@each $direction,
+$screen in $list-directions {
+    @each $screen-size in $screen {
+        .group-#{$screen-size}-#{$direction} {
+            @include screen(#{$screen-size}) {
+                --direction: #{$direction};
+            }
+        }
+    }
+}
+
+@supports not (gap: 1rem) {
+    .group {
+        margin: -0.5rem;
+    }
+
+    .group>* {
+        margin: 0.5rem;
+    }
+}

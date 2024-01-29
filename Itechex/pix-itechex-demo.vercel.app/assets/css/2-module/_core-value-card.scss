@@ -1,0 +1,36 @@
+.core-value-list {
+    row-gap: 1.5rem;
+
+    >li {
+        width: calc(50% - 1rem);
+
+        @include screen(md) {
+            width: calc(25% - 1rem);
+        }
+    }
+}
+
+.core-value-card {
+    @include screen(lg) {
+        display: grid;
+        place-content: center;
+        aspect-ratio: 1;
+        border-radius: 50%;
+
+        &--1 {
+            border: 1px solid hsl(var(--accent));
+        }
+
+        &--2 {
+            border: 1px solid hsl(var(--warning));
+        }
+
+        &--3 {
+            border: 1px solid hsl(var(--warning));
+        }
+
+        &--4 {
+            border: 1px solid hsl(var(--base));
+        }
+    }
+}

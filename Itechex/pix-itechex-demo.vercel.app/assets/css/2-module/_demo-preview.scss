@@ -1,0 +1,47 @@
+.demo-preview {
+    &__img {
+        padding: 1rem;
+        position: relative;
+        isolation: isolate;
+        background-color: hsl(var(--neutral-200));
+        border-radius: .5rem;
+        text-align: center;
+
+        &:hover {
+            .demo-preview__overlay {
+                pointer-events: unset;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        img {
+            border-radius: .5rem;
+
+            @include screen(xxl) {
+                max-height: rem(444);
+            }
+        }
+    }
+
+    &__overlay {
+        display: grid;
+        place-content: center;
+        position: absolute;
+        inset-inline: 0;
+        inset-block-start: 0;
+        inset-block-end: 0;
+        background-color: hsl(var(--base-800)/.5);
+        border-radius: inherit;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .3s ease;
+
+        &:hover {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: unset;
+        }
+    }
+}

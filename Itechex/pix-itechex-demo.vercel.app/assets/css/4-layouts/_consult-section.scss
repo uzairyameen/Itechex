@@ -1,0 +1,62 @@
+.consult-section {
+    &__top {
+        position: relative;
+        isolation: isolate;
+        background-image: url(../images/consult-bg.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include screen(md) {
+            padding-bottom: 22rem;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(25, 16, 78, 0.8) 25.12%, rgba(25, 16, 78, 0.416) 132.08%);
+            z-index: -1;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url(../images/consult-bg-element.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: .75;
+        }
+    }
+
+    &__bottom {
+        @include screen(md) {
+            padding: 0;
+            position: relative;
+            margin-top: -18rem;
+        }
+    }
+
+    &__content {
+        border-radius: 1rem;
+
+        @include screen(md) {
+            padding: rem(60) rem(40);
+            background-color: hsl(var(--white));
+            background-size: cover;
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+
+        @include screen(lg) {
+            padding: rem(60) rem(60);
+        }
+
+        @include screen(xl) {
+            padding: rem(80);
+        }
+    }
+}

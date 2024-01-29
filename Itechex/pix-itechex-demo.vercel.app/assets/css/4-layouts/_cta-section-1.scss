@@ -1,0 +1,39 @@
+.cta-section-1 {
+    background: hsl(var(--white));
+
+    @include screen(xl) {
+        position: relative;
+        isolation: isolate;
+        padding-top: clamp(2rem, 3.25vw, 3.75rem);
+
+        &::after {
+            content: "";
+            width: rem(500);
+            height: 100%;
+            position: absolute;
+            inset-block: 0;
+            inset-inline-start: 0;
+            background-image: url(../images/cta-img-1.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            @include screen(xxl) {
+                width: rem(550);
+                left: rem(60);
+            }
+
+            @include screen(xxl-x) {
+                width: rem(650);
+            }
+        }
+    }
+
+    &__content {
+        background-color: hsl(var(--base));
+        background-image: url(../images/cta-bg-1.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}

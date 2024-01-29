@@ -1,0 +1,53 @@
+.service-card-2 {
+    padding: .5rem;
+    border: 1px solid hsl(var(--stroke));
+    border-radius: .5rem;
+    background: hsl(var(--neutral-100)/.5);
+
+    &__img {
+        display: block;
+        border-radius: inherit;
+        overflow: hidden;
+
+        &-is {
+            width: 100%;
+            height: auto;
+            scale: 1;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 1rem 1rem;
+    }
+
+    &__title {
+        display: block;
+        color: hsl(var(--heading));
+        transition: all .3s ease;
+
+        &:hover {
+            color: hsl(var(--base));
+        }
+    }
+
+    &__icon-btn {
+        display: grid;
+        place-content: center;
+        width: rem(32);
+        height: rem(32);
+        border-radius: 50%;
+        background: hsl(var(--base));
+        color: hsl(var(--light));
+        text-decoration: none;
+        transition: all .3s ease;
+
+        &:hover {
+            background: hsl(var(--accent));
+            color: hsl(var(--dark));
+        }
+    }
+}

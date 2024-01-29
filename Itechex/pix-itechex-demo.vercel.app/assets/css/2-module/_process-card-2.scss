@@ -1,0 +1,56 @@
+.process-card-2 {
+    &--1 {
+        position: relative;
+        isolation: isolate;
+
+        &::after {
+            @include screen(xxl) {
+                content: url(../images/icon-51.png);
+                position: absolute;
+                inset-block-start: rem(40);
+                inset-inline-start: calc(100% - #{rem(40)});
+            }
+        }
+    }
+
+    &--2 {
+        position: relative;
+        isolation: isolate;
+
+        &::after {
+            @include screen(xxl) {
+                content: url(../images/icon-52.png);
+                position: absolute;
+                inset-block-start: rem(40);
+                inset-inline-start: calc(100% - #{rem(40)});
+            }
+        }
+    }
+
+    &__icon {
+        display: inline-grid;
+        place-content: center;
+        width: rem(120);
+        height: rem(120);
+        position: relative;
+        isolation: isolate;
+        background-color: hsl(var(--neutral));
+        border-radius: 50%;
+    }
+
+    &__notification {
+        display: inline-grid;
+        place-content: center;
+        width: rem(40);
+        height: rem(40);
+        position: absolute;
+        inset-inline-start: calc(100% - #{rem(20)});
+        inset-block-start: calc(100% - #{rem(20)});
+        transform: translate(-50%, -50%);
+        background: #24E4AC;
+        border-radius: 50%;
+        font-size: rem(18);
+        font-weight: 700;
+        color: hsl(var(--base-800));
+    }
+}

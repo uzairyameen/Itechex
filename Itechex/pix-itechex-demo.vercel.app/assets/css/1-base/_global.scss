@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+
+:root {
+  // TypoGraphy
+  --heading-font: 'Jost', sans-serif;
+  --body-font: var(--heading-font);
+
+  // Font Size (19px = 1vw @screen 1920px)
+  --h1: clamp(3.2rem, 4vw + 1rem, 4.75rem); //76px
+  --h2: clamp(2.2rem, 3vw + 1rem, 3.5625rem); //57px
+  --h3: clamp(1.8rem, 2.26vw + 1rem, 2.6875rem); //43px
+  --h4: clamp(1.4rem, 1.6vw + 1rem, 2rem); //32px
+  --h5: clamp(1.05rem, 1.26vw + 1rem, 1.5rem); //24px
+  --h6: 1.125rem; //18px
+
+  // Base Colors
+  --base-h: 249;
+  --base-s: 100%;
+  --base-l: 61%;
+
+  --base-100: var(--base-h) var(--base-s) calc(var(--base-l) + 35%);
+  --base-200: var(--base-h) var(--base-s) calc(var(--base-l) + 23%);
+  --base-300: calc(var(--base-h) - 1) var(--base-s) calc(var(--base-l) + 17%);
+  --base-400: var(--base-h) var(--base-s) calc(var(--base-l) + 7%);
+  --base: var(--base-h) var(--base-s) var(--base-l);
+  --base-600: calc(var(--base-h) - 1) calc(var(--base-s) - 37%) calc(var(--base-l) - 18%);
+  --base-700: calc(var(--base-h) - 1) calc(var(--base-s) - 37%) calc(var(--base-l) - 24%);
+  --base-800: calc(var(--base-h) - 1) calc(var(--base-s) - 40%) calc(var(--base-l) - 40%);
+  --base-900: 240 64% 8%;
+
+  // Accent Color 
+  --accent: 162 100% 43%;
+  --accent-dark: 162 100% 35%;
+
+  //Neutral
+  --neutral: 248 57% 98%;
+  --neutral-100: 240 45% 98%;
+  --neutral-200: 248 60% 95%;
+  --neutral-300: 248 61% 93%;
+  --neutral-400: 240 71% 92%;
+  --neutral-500: 240 22% 25%;
+  --neutral-600: 240 22% 18%;
+  --neutral-700: 240 22% 13%;
+  --neutral-800: 240 22% 8%;
+  --neutral-900: 240 15% 6%;
+
+  // Prime Color
+  --black: 0 0% 0%;
+  --dark: 240 30% 10%;
+  --white: 0 0% 100%;
+  --light: 0 0% 100%;
+
+  // Modifier
+  --primary: 204 88% 44%;
+  --secondary: 259 96% 62%;
+  --success: 161 74% 45%;
+  --danger: 348 100% 63%;
+  --warning: 43 100% 52%;
+  --info: 190 76% 40%;
+
+  // Text Colors 
+  --text: 235 14% 50%;
+  --heading: 242 46% 23%;
+
+  // Border Colors 
+  --border: 0 0% 88%;
+  --stroke: 0 0% 91%;
+  --divider: 248 31% 84%;
+
+  //Shadows
+  --shadow: 0 0% 0%;
+
+  // Custom Color 
+  --input-bg: 247 73% 97%;
+  --service-card-bg: 240 45% 98%;
+  --btn-outline: 248 23% 78%;
+  --blog-post-outline: 251 26% 71%;
+  --pricing-plan-border: 250 25% 71%;
+  --pricing-plan-divider: 249 36% 88%;
+  --pricing-plan-popular-border: 249 100% 76%;
+  --blog-post-text: 235 19% 42%;
+  --home-2-header-top-bg: 248 57% 95%;
+  --about-counter-bg: 255 100% 99%;
+  --service-active: 162 61% 43%;
+  --service-active-dark: 162 59% 33%;
+  --testimonial-bg: 250 100% 98%;
+  --blog-post-border: 233 28% 82%;
+  --video-btn-outline: 240 8% 70%;
+  --about-icon-outline: 247 22% 78%;
+  --tab-divider: 249 15% 62%;
+  --select-caret: 247 13% 66%;
+  --blog-tag-divider: 245 20% 70%;
+  --business-process-card-border: 235 67% 89%;
+  --accent-btn-bg: 162 85% 30%;
+  --placeholder-clr: 249 33% 78%;
+  --bullet-light: 0 0% 85%;
+  --red-bg: 349 100% 91%;
+  --accent-text-clr: 162 82% 25%;
+}
+
+[data-bs-theme="dark"] {
+  --white: 240 13% 15%;
+  // Base 
+  --base-100: var(--base-h) calc(var(--base-s) - 20%) calc(var(--base-l) + 35%);
+  --base-200: var(--base-h) calc(var(--base-s) - 20%) calc(var(--base-l) + 23%);
+  --base-300: calc(var(--base-h) - 1) calc(var(--base-s) - 20%) calc(var(--base-l) + 17%);
+  --base-400: var(--base-h) calc(var(--base-s) - 20%) calc(var(--base-l) + 7%);
+  --base: var(--base-h) calc(var(--base-s) - 20%) var(--base-l);
+  --base-600: calc(var(--base-h) - 1) calc(var(--base-s) - 50%) calc(var(--base-l) - 18%);
+  --base-700: calc(var(--base-h) - 1) calc(var(--base-s) - 50%) calc(var(--base-l) - 24%);
+  --base-800: calc(var(--base-h) - 1) calc(var(--base-s) - 55%) calc(var(--base-l) - 40%);
+  //Neutral
+  --neutral-100: 240 15% 6%;
+  --neutral-200: 240 22% 8%;
+  --neutral-300: 240 22% 13%;
+  --neutral-400: 240 22% 18%;
+  --neutral-500: 240 22% 25%;
+  --neutral-600: 240 71% 92%;
+  --neutral-700: 248 61% 93%;
+  --neutral-800: 248 60% 95%;
+  --neutral-900: 240 100% 98%;
+  // Modifier
+  --primary: 204 80% 44%;
+  --secondary: 259 85% 62%;
+  --success: 161 64% 45%;
+  --danger: 348 80% 63%;
+  --info: 190 65% 40%;
+  // Text Colors 
+  --heading: 245 46% 95%;
+  --text: 245 46% 90%;
+  //Shadows
+  --shadow: 240 12% 5%;
+  --stroke: 0 0% 50%;
+  --border: 0 0% 50%;
+  --divider: 0 0% 50%;
+  //Custom Color
+  --about-counter-bg: 240 15% 6%;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  position: relative;
+  background: hsl(var(--white));
+  font-family: var(--body-font);
+  font-size: rem(18);
+  font-weight: 400;
+  line-height: 1.5;
+  color: hsl(var(--text));
+}
+
+// Typography
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--heading-font);
+  line-height: 1.2;
+  color: hsl(var(--heading));
+
+}
+
+h1,
+.h1 {
+  font-size: var(--h1);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h2,
+.h2 {
+  font-size: var(--h2);
+  font-weight: 700;
+}
+
+h3,
+.h3 {
+  font-size: var(--h3);
+  font-weight: 700;
+}
+
+h4,
+.h4 {
+  font-size: var(--h4);
+  font-weight: 600;
+}
+
+h5,
+.h5 {
+  font-size: var(--h5);
+  font-weight: 600;
+}
+
+h6,
+.h6 {
+  font-size: var(--h6);
+  letter-spacing: .05em;
+  font-weight: 600;
+}
+
+.xsm-text {
+  font-size: .75rem; //12px
+}
+
+small,
+.sm-text {
+  font-size: .875rem; //14px
+}
+
+.lg-text {
+  font-size: 1.125rem; //18px
+}
+
+.xl-text {
+  font-size: 1.25rem; //20px
+}
+
+.xxl-text {
+  font-size: 1.5rem; //24px
+}
+
+.fw-md {
+  font-weight: 500;
+}
+
+
+.container-restricted {
+  @include screen(xxl-x) {
+    max-width: 1540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include screen(xxl-xx) {
+    max-width: 1700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

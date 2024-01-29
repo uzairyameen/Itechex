@@ -1,0 +1,80 @@
+.booking-form {
+    padding: 1.25rem;
+    background: hsl(var(--white));
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 2rem 0 hsl(var(--shadow)/.1);
+
+    @include screen(sm) {
+        padding: 2rem;
+    }
+
+    @include screen(lg) {
+        padding: 2.75rem 2rem;
+    }
+
+    &__head {
+        margin-bottom: 1.5rem;
+
+        @include screen(sm) {
+            margin-bottom: 2rem;
+        }
+    }
+    &__footer {
+        margin-top: 1.5rem;
+
+        @include screen(sm) {
+            margin-top: 2rem;
+        }
+    }
+
+    &__input {
+        padding: .75rem 2rem;
+        border: 1px solid hsl(var(--stroke));
+        border-radius: 2rem;
+        background: hsl(var(--neutral-100));
+        color: hsl(var(--heading));
+
+        &:focus {
+            box-shadow: none;
+            border-color: hsl(var(--stroke));
+            background: hsl(var(--neutral-100));
+            color: hsl(var(--heading));
+        }
+
+        &::placeholder {
+            color: hsl(var(--heading));
+        }
+    }
+
+    &__select {
+        position: relative;
+        isolation: isolate;
+
+        &::after {
+            content: '\e5c5';
+            font-family: 'Material Symbols Outlined';
+            font-size: rem(32);
+            font-weight: 300;
+            line-height: 1;
+            position: absolute;
+            inset-block-start: 50%;
+            inset-inline-end: 1rem;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .form-select {
+            padding: .75rem 2rem;
+            border: 1px solid hsl(var(--stroke));
+            border-radius: 3rem;
+            background: hsl(var(--neutral-100));
+            color: hsl(var(--heading));
+
+            &:focus {
+                box-shadow: none;
+                border-color: hsl(var(--stroke));
+                background: hsl(var(--neutral-100));
+            }
+        }
+    }
+}

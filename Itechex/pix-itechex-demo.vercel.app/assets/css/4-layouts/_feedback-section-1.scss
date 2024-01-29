@@ -1,0 +1,14 @@
+.feedback-section-1 {
+    position: relative;
+    isolation: isolate;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70%;
+        background: hsl(var(--neutral-100));
+        z-index: -1;
+    }
+}

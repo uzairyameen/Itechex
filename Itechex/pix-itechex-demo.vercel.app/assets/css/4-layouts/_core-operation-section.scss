@@ -1,0 +1,19 @@
+.core-operation-section {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        @include screen(lg) {
+            content: '';
+            position: absolute;
+            inset-inline-start: 52%;
+            inset-inline-end: 0;
+            inset-block: #{rem(160)};
+            background-image: url(../images/core-operation-bg.png);
+            background-size: contain;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+    }
+}

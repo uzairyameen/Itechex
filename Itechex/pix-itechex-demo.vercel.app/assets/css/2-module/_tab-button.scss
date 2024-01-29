@@ -1,0 +1,33 @@
+.tab-button {
+    --bg: transparent;
+    --clr: hsl(var(--dark));
+    display: inline-block;
+    padding: .5rem 1.25rem;
+    border-radius: .25rem;
+    background: var(--bg);
+    color: var(--clr);
+    font-weight: 500;
+    transition: all .3s ease;
+    text-decoration: none;
+
+    &:hover {
+        --bg: hsl(var(--base));
+        color: hsl(var(--neutral));
+    }
+
+    &.active {
+        --bg: hsl(var(--base));
+        --clr: hsl(var(--neutral));
+    }
+
+    &--light {
+        --bg: hsl(var(--light));
+        color: hsl(var(--dark));
+    }
+}
+
+[data-bs-theme="dark"] {
+    .tab-button {
+        --clr: hsl(var(--light));
+    }
+}

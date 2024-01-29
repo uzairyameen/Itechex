@@ -1,0 +1,41 @@
+.footer-2 {
+    position: relative;
+    isolation: isolate;
+    background: hsl(var(--base));
+
+    &::before {
+        display: none;
+        content: url(../images/footer-2-bg.png);
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+
+        @include screen(xl) {
+            display: block;
+        }
+    }
+
+    &::after {
+        display: none;
+        content: url(../images/footer-2-bg.png);
+        position: absolute;
+        inset-inline-end: 0;
+        inset-block-start: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+
+        @include screen(xl) {
+            display: block;
+        }
+    }
+
+    &__content {
+        border-block: 1px solid hsl(var(--divider)/.5);
+    }
+
+    &__bottom {
+        padding-block: rem(32);
+    }
+}

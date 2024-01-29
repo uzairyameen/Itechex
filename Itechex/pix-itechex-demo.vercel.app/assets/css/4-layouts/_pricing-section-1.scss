@@ -1,0 +1,26 @@
+.pricing-section-1 {
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        background-image: url(../images/pricing-section-bg.png);
+        background-size: contain;
+        background-position: center top;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(hsl(var(--neutral-100)) 50%, transparent 50%);
+        z-index: -2;
+    }
+}

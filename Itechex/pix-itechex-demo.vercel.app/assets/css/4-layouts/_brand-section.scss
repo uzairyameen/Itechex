@@ -1,0 +1,20 @@
+.brand-section {
+    padding-top: clamp(3.75rem, 6.5vw, 7.5rem);
+
+    @include screen(xxl) {
+        padding: 0;
+        margin-bottom: -#{rem(48)};
+    }
+
+    &__content {
+        @include screen (xxl) {
+            padding: 2rem 1.75rem;
+            position: relative;
+            background: hsl(var(--white));
+            border-radius: .5rem;
+            box-shadow: 0 0 2rem hsl(var(--shadow)/.1);
+            transform: translateY(-40%);
+            z-index: 1;
+        }
+    }
+}

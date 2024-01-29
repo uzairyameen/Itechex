@@ -1,0 +1,34 @@
+//Media Breakpoint for Each Device
+@use 'sass:map';
+$screen: (
+  xxs: 320px,
+  xs: 375px,
+  xs-plus: 410px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxl-x: 1600px,
+  xxl-xx: 1920px
+);
+@mixin screen($key) {
+  $size: map-get($screen, $key );
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+//Mobile Landscape
+@mixin landscape {
+  @media all and (orientation:landscape) {
+    @content;
+  }
+}
+
+//Mobile Potrait
+@mixin potrait {
+  @media all and (orientation:potrait) {
+    @content;
+  }
+}

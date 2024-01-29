@@ -1,0 +1,14 @@
+.case-study-section {
+    position: relative;
+    isolation: isolate;
+    background-color: hsl(var(--neutral-100));
+
+    &::after {
+        content: url(../images/case-study-bg.png);
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-end: 0;
+        opacity: .1;
+        z-index: -1;
+    }
+}

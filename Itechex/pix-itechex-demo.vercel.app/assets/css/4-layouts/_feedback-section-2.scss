@@ -1,0 +1,15 @@
+.feedback-section-2 {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70%;
+        background: hsl(var(--base));
+        z-index: -1;
+    }
+}

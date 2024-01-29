@@ -1,0 +1,47 @@
+.work-step-card {
+    &>li {
+        width: 100%;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid hsl(var(--stroke)/.5);
+
+        @include screen(md) {
+            width: calc(50% - 2rem);
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        @include screen(lg) {
+            width: calc(25% - 2.3rem);
+            position: relative;
+            isolation: isolate;
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset-block: 0;
+                inset-inline-end: -1.5rem;
+                width: 1px;
+                height: 100%;
+                background: hsl(var(--stroke)/.5);
+            }
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+
+            @include screen(lg) {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__content {
+        @include screen(lg) {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+}

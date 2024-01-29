@@ -1,0 +1,284 @@
+.bttn {
+    display: inline-flex;
+    justify-content: center;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s ease;
+
+    &:hover {
+        .bttn__arrow {
+            margin-inline-end: .75rem;
+
+            &::after {
+                left: calc(100% + .25rem);
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .bttn__icon-base {
+            background: hsl(var(--base-600));
+        }
+    }
+
+    &-sm {
+        padding: .5rem 1.25rem;
+    }
+
+    &-md {
+        min-width: 5rem;
+        padding: .75rem 2rem;
+    }
+
+    &-pill {
+        border-radius: 3rem;
+    }
+
+    &--sqr {
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1;
+
+        &-xs {
+            width: 1.75rem;
+            height: 1.75rem;
+            font-size: 1rem;
+        }
+
+        &-sm {
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1.25rem;
+        }
+
+        &-md {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        &-lg {
+            width: 3.75rem;
+            height: 3.75rem;
+        }
+
+        &-xl {
+            width: rem(80);
+            height: rem(80);
+        }
+
+        &-xxl {
+            width: rem(100);
+            height: rem(100);
+        }
+    }
+
+    &--rounded {
+        border-radius: .25rem;
+    }
+
+    &--circle {
+        border-radius: 50%;
+    }
+
+    &--light {
+        background: hsl(var(--neutral));
+        color: hsl(var(--base));
+
+        &:hover {
+            background: hsl(var(--neutral));
+            color: hsl(var(--base));
+        }
+    }
+
+    &--light-base {
+        background: hsl(var(--neutral));
+        color: hsl(var(--base));
+
+        &:hover {
+            background: hsl(var(--base));
+            color: hsl(var(--neutral));
+        }
+    }
+
+    &--light-accent {
+        background: hsl(var(--neutral));
+        color: hsl(var(--base));
+
+        &:hover {
+            background: hsl(var(--base-600));
+            color: hsl(var(--light));
+        }
+    }
+
+    &--base-accent {
+        background: hsl(var(--base));
+        color: hsl(var(--light));
+
+        &:hover {
+            background: hsl(var(--accent));
+            color: hsl(var(--base-800));
+        }
+    }
+
+    &--light-outline {
+        border: 1px solid hsl(var(--light));
+        color: hsl(var(--base));
+
+        &:hover {
+            background: hsl(var(--light));
+            color: hsl(var(--base-600));
+        }
+    }
+
+    &--base-outline {
+        border: 1px solid hsl(var(--base));
+        color: hsl(var(--base));
+
+        &:hover {
+            background: hsl(var(--base-600));
+            color: hsl(var(--light));
+        }
+    }
+
+    &--stroke-outline {
+        border: 1px solid hsl(var(--stroke));
+        color: hsl(var(--base));
+
+        &:hover {
+            background: hsl(var(--light));
+            color: hsl(var(--base-600));
+        }
+    }
+
+    &--base {
+        position: relative;
+        isolation: isolate;
+        background: hsl(var(--base));
+        color: hsl(var(--neutral));
+        overflow: hidden;
+
+        &:hover {
+            color: hsl(var(--neutral));
+
+            &::before {
+                width: 100%;
+            }
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 100%;
+            position: absolute;
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            background-color: hsl(var(--base-400)/.3);
+            transition: width .5s ease-in-out;
+            z-index: -1;
+        }
+    }
+    &--accent {
+        position: relative;
+        isolation: isolate;
+        background: hsl(var(--accent-btn-bg));
+        color: hsl(var(--neutral));
+        overflow: hidden;
+
+        &:hover {
+            color: hsl(var(--neutral));
+
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+
+    &--warning {
+        position: relative;
+        isolation: isolate;
+        background: #FFD98B;
+        color: hsl(var(--black));
+        overflow: hidden;
+
+        &:hover {
+            color: hsl(var(--black));
+            background: #eeca82;
+        }
+    }
+
+    &--light-pulse {
+        position: relative;
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: hsl(var(--base-100));
+            border-radius: 50%;
+            opacity: .8;
+            z-index: -1;
+        }
+
+        &::before {
+            animation: pulse 2s ease-out infinite;
+        }
+
+        &::after {
+            animation: pulse 2s 1s ease-out infinite;
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        margin-inline-start: .25rem;
+        line-height: 1;
+
+        &-cover {
+            width: 24px;
+            height: 24px;
+            display: grid;
+            place-content: center;
+            background-color: hsl(var(--light));
+            border-radius: 50%;
+            color: hsl(var(--base));
+        }
+
+        &-base {
+            width: 24px;
+            height: 24px;
+            display: grid;
+            place-content: center;
+            background-color: hsl(var(--base));
+            border-radius: 50%;
+            color: hsl(var(--light));
+        }
+    }
+
+    &__arrow {
+        display: inline-block;
+        position: relative;
+        isolation: isolate;
+        transition: all .3s ease;
+
+        &::after {
+            content: "\e8e4";
+            font-family: 'Material Symbols Rounded';
+            font-weight: 200;
+            display: inline-block;
+            position: absolute;
+            inset-block-start: 50%;
+            inset-inline-start: 100%;
+            transform: translateY(-50%);
+            font-size: 1.25rem;
+            line-height: 1;
+            pointer-events: none;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .3s ease;
+        }
+    }
+}

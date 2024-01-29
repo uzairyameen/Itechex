@@ -1,0 +1,33 @@
+.dark-mode-toggle {
+    padding: .75rem;
+    border: none;
+    background: transparent;
+    font-size: 1.25rem;
+    color: hsl(var(--neutral));
+    line-height: 1;
+    transition: all .3s ease;
+
+    &:hover {
+        color: hsl(var(--accent));
+    }
+
+    &.active {
+        .dark-mode-toggle__dark {
+            display: grid;
+            place-content: center;
+        }
+
+        .dark-mode-toggle__light {
+            display: none;
+        }
+    }
+
+    &__light {
+        display: grid;
+        place-content: center;
+    }
+
+    &__dark {
+        display: none;
+    }
+}

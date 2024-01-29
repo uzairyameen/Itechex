@@ -1,0 +1,97 @@
+.bg--white {
+    background-color: hsl(var(--white));
+}
+
+.bg-base {
+    background-color: hsl(var(--base));
+}
+
+.bg-base-100 {
+    background-color: hsl(var(--base-100));
+}
+
+.bg-base-200 {
+    background-color: hsl(var(--base-200));
+}
+
+.bg-base-300 {
+    background-color: hsl(var(--base-300));
+}
+
+.bg-base-400 {
+    background-color: hsl(var(--base-400));
+}
+
+.bg-base-600 {
+    background-color: hsl(var(--base-600));
+}
+
+.bg-base-700 {
+    background-color: hsl(var(--base-700));
+}
+
+.bg-base-800 {
+    background-color: hsl(var(--base-800));
+}
+
+.bg-base-900 {
+    background-color: hsl(var(--base-900));
+}
+
+.bg-neutral {
+    background-color: hsl(var(--neutral));
+}
+
+.bg-neutral-100 {
+    background-color: hsl(var(--neutral-100));
+}
+
+.bg-neutral-200 {
+    background-color: hsl(var(--neutral-200));
+}
+
+.bg-neutral-300 {
+    background-color: hsl(var(--neutral-300));
+}
+
+.bg-neutral-400 {
+    background-color: hsl(var(--neutral-400));
+}
+
+.bg-neutral-500 {
+    background-color: hsl(var(--neutral-500));
+}
+
+.bg-neutral-600 {
+    background-color: hsl(var(--neutral-600));
+}
+
+.bg-neutral-700 {
+    background-color: hsl(var(--neutral-700));
+}
+
+.bg-neutral-800 {
+    background-color: hsl(var(--neutral-800));
+}
+
+.bg-neutral-900 {
+    background-color: hsl(var(--neutral-900));
+}
+
+.\:bg-base {
+    transition: all .3s ease;
+
+    &:hover {
+        background-color: hsl(var(--base));
+    }
+}
+
+.\:bg-accent {
+    &:hover {
+        background-color: hsl(var(--accent));
+    }
+}
+
+.red-bg {
+    background-color: hsl(var(--red-bg));
+}

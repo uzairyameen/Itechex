@@ -1,0 +1,27 @@
+.terms-sidebar {
+    padding: 2rem;
+    background-color: hsl(var(--base));
+    border-radius: 1rem;
+
+    &__link {
+        background: hsl(var(--light)/.25);
+        color: hsl(var(--light));
+        font-weight: 500;
+
+        &:hover {
+            background-color: hsl(var(--light));
+            color: hsl(var(--dark));
+        }
+
+        &.active {
+            background-color: hsl(var(--accent));
+            color: hsl(var(--light));
+
+            &:hover {
+                background-color: hsl(var(--accent-dark));
+                color: hsl(var(--light));
+            }
+
+        }
+    }
+}

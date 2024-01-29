@@ -1,0 +1,71 @@
+.price-card-1 {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+    padding: rem(40) rem(30);
+    background: hsl(var(--white));
+    border: 1px solid hsl(var(--stroke));
+    border-radius: .5rem;
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(20);
+
+        &-icon {
+            display: grid;
+            place-content: center;
+            width: rem(120);
+            height: rem(120);
+            border-radius: 50%;
+
+            &.base {
+                background: hsl(var(--base)/.1);
+            }
+
+            &.light {
+                background: hsl(var(--light));
+            }
+
+            &-is {
+                width: rem(60);
+                height: rem(60);
+                object-fit: contain;
+            }
+        }
+    }
+
+    &.popular {
+        background: hsl(var(--base));
+        position: relative;
+        isolation: isolate;
+    }
+
+    .popular__label {
+        width: rem(150);
+        height: rem(150);
+        position: absolute;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        padding-block: 1rem;
+        text-align: center;
+        z-index: -1;
+
+        &-text {
+            width: rem(200);
+            padding: rem(12) 0;
+            position: absolute;
+            top: rem(30);
+            left: 0;
+            transform: rotate(45deg);
+            background: hsl(var(--accent));
+            font-size: rem(12);
+            color: hsl(var(--dark));
+            text-align: center;
+            text-transform: uppercase;
+            box-shadow: 0 rem(4) rem(8) hsl(var(--shadow)/.1);
+        }
+    }
+}

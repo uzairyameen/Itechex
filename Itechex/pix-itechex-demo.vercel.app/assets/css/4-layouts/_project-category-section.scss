@@ -1,0 +1,21 @@
+.project-category-section {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset-inline: 0;
+        inset-block-start: 0;
+        height: 25%;
+        background-color: hsl(var(--base-900));
+        z-index: -1;
+
+        @include screen(sm) {
+            height: 30%;
+        }
+        @include screen(md) {
+            height: 45%;
+        }
+    }
+}

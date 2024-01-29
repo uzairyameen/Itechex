@@ -1,0 +1,63 @@
+.mobile-notification {
+    display: flex;
+    gap: 0.75rem;
+    text-decoration: none;
+    transition: all .3s ease;
+
+    &:hover {
+        color: hsl(var(--neutral));
+    }
+
+    &__icon {
+        display: grid;
+        place-content: center;
+        width: 3rem;
+        height: 3rem;
+        flex-shrink: 0;
+        border-radius: 50%;
+        font-size: 1.25rem;
+        line-height: 1;
+
+        &-primary {
+            background: hsl(var(--base)/.5);
+            color: hsl(var(--neutral));
+        }
+
+        &-secondary {
+            background: hsl(var(--secondary)/.5);
+            color: hsl(var(--neutral));
+        }
+
+        &-success {
+            background: hsl(var(--success)/.5);
+            color: hsl(var(--neutral));
+        }
+
+        &-warning {
+            background: hsl(var(--warning)/.5);
+            color: hsl(var(--neutral));
+        }
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    &__title {
+        display: block;
+        font-size: 1rem;
+        font-weight: 500;
+        color: hsl(var(--neutral));
+    }
+
+    &__subtitle {
+        display: block;
+        max-width: 25ch;
+        font-size: .875rem;
+        line-height: 1.715;
+        color: hsl(var(--neutral)/.7);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}

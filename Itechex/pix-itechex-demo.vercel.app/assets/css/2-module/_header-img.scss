@@ -1,0 +1,14 @@
+.header-img {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        content: url(../images/demo-header-bg.png);
+        position: absolute;
+        inset-inline: 0;
+        inset-block: -50%;
+        transform: scale(1.2);
+        transform-origin: center;
+        z-index: -1;
+    }
+}

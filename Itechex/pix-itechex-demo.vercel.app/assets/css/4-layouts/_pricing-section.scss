@@ -1,0 +1,56 @@
+.pricing-section {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset-block-start: 35rem;
+        inset-block-end: 39rem;
+        inset-inline: 0;
+        background-color: hsl(var(--base));
+        background-image: url(../images/pricing-section-bg-3.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+
+        @include screen(xs) {
+            inset-block-end: 35rem;
+        }
+
+        @include screen(sm) {
+            inset-block-start: 29rem;
+            inset-block-end: 32rem;
+        }
+
+        @include screen(md) {
+            inset-block-start: 30rem;
+            inset-block-end: 10rem;
+        }
+
+        @include screen(xl) {
+            inset-block-start: 35rem;
+        }
+    }
+
+    &__content {
+        @include screen(md) {
+            padding: 2rem;
+            background-color: hsl(var(--white));
+            background-image: url(../images/pricing-section-bg-2.png);
+            background-position: right bottom;
+            background-size: contain;
+            background-repeat: no-repeat;
+            border-radius: 1rem;
+        }
+
+        @include screen(lg) {
+            padding: rem(48);
+        }
+
+        @include screen(xl) {
+            padding: rem(60);
+        }
+    }
+}

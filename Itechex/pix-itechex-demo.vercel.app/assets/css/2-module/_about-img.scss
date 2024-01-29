@@ -1,0 +1,103 @@
+.about-img {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include screen(xxl-xx) {
+        position: relative;
+        isolation: isolate;
+    }
+
+    &--alt {
+        @include screen(xxl-xx) {
+            transform: translateX(-13rem);
+        }
+    }
+
+    &__content {
+        display: none;
+        border-radius: 1rem;
+        overflow: hidden;
+
+        @include screen(xxl-xx) {
+            display: block;
+            position: absolute;
+
+            &:nth-of-type(2) {
+                width: rem(344);
+                height: rem(208);
+                transform: translate(-15%, -50%);
+            }
+
+            &:nth-of-type(3) {
+                width: rem(220);
+                height: rem(134);
+                inset-inline-start: 60%;
+                inset-block-end: calc(100% + 60px);
+            }
+
+            &:nth-of-type(4) {
+                width: rem(220);
+                height: rem(134);
+                inset-block-start: calc(100% + 28px);
+            }
+
+            &:nth-of-type(5) {
+                width: rem(212);
+                height: rem(216);
+                inset-inline-start: 100%;
+                inset-block-start: 100%;
+                transform: translateY(-80px);
+            }
+        }
+
+        &-xl {
+            display: block;
+
+            @include screen(xxl-xx) {
+                position: relative;
+                transform: translateX(#{rem(140)});
+            }
+        }
+
+        &-start {
+            display: block;
+
+            @include screen(xxl-xx) {
+                position: relative;
+                transform: translateX(-#{rem(80)});
+            }
+        }
+    }
+
+    &__is {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+[dir="rtl"] {
+    .about-img {
+        &__content-start {
+            @include screen(xxl-xx) {
+                transform: translateX(5rem);
+            }
+        }
+
+        &__content {
+            &:nth-of-type(3) {
+                @include screen(xxl-xx) {
+                    inset-inline-start: auto;
+                    inset-inline-end: 100%;
+                }
+            }
+        }
+    }
+
+    .about-img--alt {
+        @include screen(xxl-xx) {
+            transform: translateX(13rem);
+        }
+    }
+}

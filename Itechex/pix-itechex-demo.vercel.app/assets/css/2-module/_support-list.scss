@@ -1,0 +1,13 @@
+.support-list {
+    @include screen(md) {
+        max-width: 30rem;
+    }
+
+    &>li {
+        width: 100%;
+
+        @include screen(sm) {
+            width: calc(50% - 1rem);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.work-process-1 {
+    &__top {
+        background-color: hsl(var(--base));
+        background-image: url(../images/work-process-bg.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include screen(xl) {
+            padding-bottom: calc(7rem + 8rem);
+        }
+    }
+
+    &__bottom {
+        @include screen(xl) {
+            padding-top: 0;
+            padding-bottom: 0;
+            position: relative;
+            margin-top: -#{rem(184)};
+        }
+    }
+}

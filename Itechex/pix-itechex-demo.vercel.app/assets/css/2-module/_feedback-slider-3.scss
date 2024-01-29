@@ -1,0 +1,38 @@
+.feedback-slider-3 {
+    margin-block: -2rem;
+
+    &-container {
+        --swiper-theme-color: hsl(var(--base));
+        --swiper-navigation-size: 32px;
+        position: relative;
+
+        &:hover {
+            .swiper-button-next {
+                opacity: 1;
+            }
+
+            .swiper-button-prev {
+                opacity: 1;
+            }
+        }
+
+        .swiper-button-next {
+            @include screen(xxl) {
+                right: auto;
+                left: calc(100% + 1rem);
+                transition: all .3s ease;
+                opacity: 0;
+            }
+        }
+
+        .swiper-button-prev {
+            @include screen(xxl) {
+                left: auto;
+                right: calc(100% + 1rem);
+                transition: all .3s ease;
+                opacity: 0;
+            }
+        }
+    }
+
+}

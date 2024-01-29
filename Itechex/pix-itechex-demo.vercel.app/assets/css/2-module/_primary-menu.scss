@@ -1,0 +1,68 @@
+.primary-menu {
+    display: none;
+
+    @include screen(xl) {
+        display: block;
+    }
+
+    &__list {
+        flex-direction: row;
+        align-items: center;
+        --gap: 0;
+        position: relative;
+        z-index: 99;
+        transition: all .3s ease;
+
+        &>li {
+            position: relative;
+
+            &:hover {
+                .sub-menu {
+                    inset-block-start: 100%;
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: unset;
+                }
+            }
+        }
+    }
+
+    &__link {
+        display: flex;
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all .3s ease;
+
+        &.has-sub {
+            position: relative;
+            isolation: isolate;
+
+            &::after {
+                content: "\e5cf";
+                font-family: 'Material Symbols Rounded';
+                font-weight: 300;
+                display: grid;
+                place-content: center;
+                padding-inline: .25rem;
+                pointer-events: none;
+                font-size: 1rem;
+            }
+        }
+
+        &.has-megamenu {
+            &::after {
+                content: "\e5cf";
+                font-family: 'Material Symbols Rounded';
+                font-weight: 300;
+                display: grid;
+                place-content: center;
+                padding-inline: .25rem;
+                pointer-events: none;
+                font-size: 1rem;
+            }
+        }
+
+    }
+}

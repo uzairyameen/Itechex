@@ -1,0 +1,16 @@
+.banner-section {
+    position: relative;
+    isolation: isolate;
+    background-image: url(../images/banner-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: hsl(var(--base)/.4);
+        z-index: -1;
+    }
+}

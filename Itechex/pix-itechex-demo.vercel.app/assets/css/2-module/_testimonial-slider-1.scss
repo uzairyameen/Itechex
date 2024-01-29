@@ -1,0 +1,33 @@
+.testimonial-slider-1 {
+    margin-block: -2rem;
+
+    &:hover {
+        .swiper-button-next {
+            opacity: 1;
+        }
+
+        .swiper-button-prev {
+            opacity: 1;
+        }
+    }
+
+    .swiper-button-next {
+        color: hsl(var(--base));
+        transition: all .3s ease;
+        opacity: 0;
+    }
+
+    .swiper-button-prev {
+        color: hsl(var(--base));
+        transition: all .3s ease;
+        opacity: 0;
+    }
+
+    .swiper-slide {
+        opacity: .5;
+    }
+
+    .swiper-slide-active {
+        opacity: 1;
+    }
+}

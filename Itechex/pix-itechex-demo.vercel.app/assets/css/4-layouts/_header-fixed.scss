@@ -1,0 +1,8 @@
+.header-fixed {
+    .header--fixed {
+        &.header--4 {
+            background: hsl(var(--white));
+            box-shadow: 0 .25rem 1rem hsl(var(--shadow)/.1);
+        }
+    }
+}

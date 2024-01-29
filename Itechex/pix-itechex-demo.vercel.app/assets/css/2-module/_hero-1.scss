@@ -1,0 +1,98 @@
+.hero-1 {
+    background-image: url(../images/hero-bg-1.png);
+    background-color: hsl(var(--base));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__wrapper {
+        padding-top: clamp(3.75rem, 6.5vw, 7.5rem);
+        padding-bottom: clamp(3.75rem, 6.5vw, 7.5rem);
+
+        @include screen(xl) {
+            display: grid;
+            place-content: center;
+            min-height: calc(100vh - 7.75rem);
+            position: relative;
+            isolation: isolate;
+        }
+    }
+
+    &__subtext {
+        max-width: 35ch;
+    }
+
+    &__btn-group {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    &__masked {
+        display: none;
+
+        @include screen(xl) {
+            display: block;
+            position: absolute;
+            inset: 0;
+            background: hsl(var(--white));
+            z-index: -1;
+            mask-image: url(../images/hero-shape-masked-1.png);
+            -webkit-mask-image: url(../images/hero-shape-masked-1.png);
+            mask-size: contain;
+            -webkit-mask-size: contain;
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            mask-position: center bottom;
+            -webkit-mask-position: center bottom;
+        }
+    }
+
+    .element--1 {
+        inset-block-start: 8rem;
+        inset-inline-start: 1.5rem;
+        animation: topRight 15s linear infinite;
+    }
+
+    .element--2 {
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 50%;
+        inset-block-start: 8rem;
+        inset-inline-start: 50%;
+        background: hsl(var(--success));
+        outline: 2px solid hsl(var(--neutral));
+        animation: circlerotate 48s linear infinite;
+    }
+    .element--3 {
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 50%;
+        inset-block-start: 18rem;
+        inset-inline-start: 50%;
+        background: hsl(var(--danger));
+        outline: 2px solid hsl(var(--neutral));
+        animation: circlerotateX 30s linear infinite;
+    }
+    .element--4 {
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 50%;
+        inset-block-start: 12rem;
+        inset-inline-end: 6.5rem;
+        background: hsl(var(--warning));
+        outline: 2px solid hsl(var(--neutral));
+        animation: circlerotate 35s linear infinite;
+    }
+    .element--5 {
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 50%;
+        inset-block-start: 25rem;
+        inset-inline-end: 5rem;
+        background: hsl(var(--info));
+        outline: 2px solid hsl(var(--neutral));
+        animation: circlerotateX 40s linear infinite;
+    }
+}
